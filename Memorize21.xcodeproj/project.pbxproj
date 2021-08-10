@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		156B8CD826C3042E00E6ECED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		15DD7BF626BEAFEC0063AB00 /* Memorize21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DD7BF926BEAFEC0063AB00 /* Memorize21App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memorize21App.swift; sourceTree = "<group>"; };
 		15DD7BFB26BEAFEC0063AB00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		15DD7BED26BEAFEB0063AB00 = {
 			isa = PBXGroup;
 			children = (
+				156B8CD826C3042E00E6ECED /* README.md */,
 				15DD7BF826BEAFEC0063AB00 /* Memorize21 */,
 				15DD7C0A26BEAFED0063AB00 /* Memorize21Tests */,
 				15DD7C1526BEAFED0063AB00 /* Memorize21UITests */,
