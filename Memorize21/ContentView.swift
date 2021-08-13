@@ -16,45 +16,15 @@ struct ContentView: View {
                 // Lazy about accessing the body vars in the view
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     // \.self means: use the emoji String itself as identifier
+                    // the emoji is just the argument to the closure
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
             }
             .foregroundColor(.red)
-            Spacer() // flexible spacing which takes any open space that is left
-            HStack {
-                removeButton
-                Spacer() // a spacer is always grabbing as much space as it can
-                addButton
-            }
-            .font(.largeTitle)
-            .padding(.horizontal)
         }
         .padding(.horizontal)
-    }
-    
-    var removeButton: some View {
-        // the name of the first Button argument named 'action' (which is also a
-        // function(), can be omitted
-        // the the second argument 'label' is also a function because it is a view builder
-        Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        } label: {
-            Image(systemName: "minus.circle")
-        }
-    }
-    
-    var addButton: some View {
-        Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
-        } label: {
-           Image(systemName: "plus.circle")
-        }
     }
 }
 
