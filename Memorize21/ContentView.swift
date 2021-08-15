@@ -5,26 +5,29 @@ import SwiftUI
 // (application state flows through pure functions)
 // (see also https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
 struct ContentView: View {
-    // must behave like an Identifiable, that is why we use itself \.self as identifier
-    var emojis = ["🚖","🛥","✈️","🚀","🚗","🚊","🚟","🛶","🛫","🚜","🏎","🏍","🛵","🚐","🚤","🛴","🚲","⛵️","🚠","🚌","🦽","🛸","🏍","🚢"]
-    @State var emojiCount = 4
+    // we would probably better name that var 'game/memoryGame', but for
+    // learning purposes (to better see which is the viewModel) we call it gameViewModel
+    // (when an ObservedObject changes, the entire body of a view gets automatically redrawn!)
+    @ObservedObject var gameViewModel: EmojiMemoryGameViewModel
     
+    // the view who draws the model
     var body: some View {
-        // VStack/HStack/ZStack are view builders
-        VStack {
             ScrollView {
                 // Lazy about accessing the body vars in the view
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     // \.self means: use the emoji String itself as identifier
                     // the emoji is just the argument to the closure
-                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
-                        CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
+                    ForEach(gameViewModel.cards) { card in
+                        CardView(card: card)
+                            .aspectRatio(2/3, contentMode: .fit)
+                            .onTapGesture {
+                                gameViewModel.choose(card)
+                            }
                     }
                 }
             }
             .foregroundColor(.red)
-        }
-        .padding(.horizontal)
+            .padding(.horizontal)
     }
 }
 
@@ -32,28 +35,18 @@ struct ContentView: View {
 // 'self' here is the whole CardView
 // the view is constantly rebuild when something changes in view
 struct CardView: View {
-    // @State turns this var in to a pointer to some boolean somewhere in the memory
-    // if the boolean in memory changes, SwiftUI will rebuild the body of this
-    // CardView
-    // (see also the official docu)
-    @State var isFaceUp: Bool = true
-    var content: String
+    let card: MemoryGameModel<String>.Card
     
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20)
-            if isFaceUp {
+            if card.isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 3)
-                Text(content).font(.largeTitle)
+                Text(card.content).font(.largeTitle)
             } else {
                 shape.fill()
             }
-        }
-        // if a function (here a view modifier) takes just one
-        // argument, we can leave out the argument name (here 'perform:')
-        .onTapGesture {
-            isFaceUp = !isFaceUp
         }
     }
 }
@@ -89,9 +82,10 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let gameViewModel = EmojiMemoryGameViewModel()
+        ContentView(gameViewModel: gameViewModel)
             .preferredColorScheme(.dark)
-        ContentView()
+        ContentView(gameViewModel: gameViewModel)
             .preferredColorScheme(.light)
     }
 }
