@@ -21,6 +21,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     }
     
     // access control - private(set): other structs/classes can look at the model, but can't change it
+    // Swift detects changes in structs, that is why the model is a struct
     @Published private var model: MemoryGameModel<String> = createMemoryGame()
      
     

@@ -4,6 +4,7 @@ import SwiftUI
 // (there is no shared state, mutable data or other side effects)
 // (application state flows through pure functions)
 // (see also https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+// View which reflect the model
 struct ContentView: View {
     // we would probably better name that var 'game/memoryGame', but for
     // learning purposes (to better see which is the viewModel) we call it gameViewModel
@@ -44,6 +45,8 @@ struct CardView: View {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 3)
                 Text(card.content).font(.largeTitle)
+            } else if card.isMatched {
+                shape.opacity(0)
             } else {
                 shape.fill()
             }
