@@ -7,23 +7,55 @@ import SwiftUI
 // instance or var of a class, can change it!)
 class EmojiMemoryGameViewModel: ObservableObject {
     
-    // must behave like an Identifiable, that is why we use itself \.self as identifier
-    // static: global constant (type constant)
-    static let emojis = ["🚖","🛥","✈️","🚀","🚗","🚊","🚟","🛶","🛫","🚜","🏎","🏍","🛵","🚐","🚤","🛴","🚲","⛵️","🚠","🚌","🦽","🛸","🏍","🚢"]
+    init() {
+        emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
+        emojiThemeModel.emojis.shuffle() // Assignment2 - Task5
+        model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
+    }
+    
+    private static var emojiThemeModels: Array<EmojiThemeModel> = [
+        EmojiThemeModel(name: "Animals",
+                   emojis: ["🐍", "🐈", "🐇", "🦖", "🪲", "🐬", "🦒", "🦢", "🐿", "🦔", "🐘", "🦧"],
+                   numberOfPairsOfCards: 12,
+                   color: "green"),
+        EmojiThemeModel(name: "Smileys",
+                   emojis: ["😀", "☺️", "☹️", "🤬", "🥶", "😴", "🥱", "😢", "🥳", "🤩", "🥰", "😷"],
+                   numberOfPairsOfCards: 8,
+                   color: "blue"),
+        EmojiThemeModel(name: "Objects",
+                   emojis: ["🕯", "🪚", "🎁", "🛀🏾", "✂️", "🪄", "🎱", "🔓", "🧲", "💰", "🧯", "📡"],
+                   numberOfPairsOfCards: 12,
+                   color: "black"),
+        EmojiThemeModel(name: "Flags",
+                   emojis: ["🇯🇵", "🇦🇴", "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "🇪🇷", "🇲🇶", "🇪🇸", "🇿🇦", "🇪🇺", "🇧🇷", "🇹🇿", "🇩🇰", "🇨🇦"],
+                   numberOfPairsOfCards: 12,
+                   color: "yellow"),
+        EmojiThemeModel(name: "Sport",
+                   emojis: ["🏄🏾‍♀️", "🪂", "🤸🏿‍♂️", "🧘🏽‍♂️", "🧗🏽‍♂️", "🤺", "🤾🏽‍♂️", "🏌🏽‍♀️", "🤽🏽‍♀️", "🚴🏽‍♀️", "🚣🏽", "🏇🏾"],
+                   numberOfPairsOfCards: 12,
+                   color: "orange"),
+        EmojiThemeModel(name: "Vehicles",
+                   emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
+                   numberOfPairsOfCards: 12,
+                   color: "red"),
+        EmojiThemeModel(name: "Halloween",
+                   emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
+                   numberOfPairsOfCards: 10,
+                   color: "red")
+    ]
     
     // this is a type function because it is static and belongs to the class (global scope) and not an instance of it
-    static func createMemoryGame() -> MemoryGameModel<String> {
-        // as 2nd argument we just pass in a closure with a argument 'pairIndex' and a smiley as return value (CardContent) (1:23:15 - lecture 3)
-        // createCardContent closure: pairIndex 'in' is to separate the argument from the body3e
-        MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
-            emojis[pairIndex]
+    private static func createMemoryGame(emojiThemeModel: EmojiThemeModel) -> MemoryGameModel<String> {
+        MemoryGameModel<String>(numberOfPairsOfCards: emojiThemeModel.numberOfPairsOfCards) { pairIndex in
+            return emojiThemeModel.emojis[pairIndex]
         }
     }
     
     // access control - private(set): other structs/classes can look at the model, but can't change it
     // Swift detects changes in structs, that is why the model is a struct
-    @Published private var model: MemoryGameModel<String> = createMemoryGame()
+    @Published private var model: MemoryGameModel<String>
      
+    private var emojiThemeModel: EmojiThemeModel
     
     // to make the model fully private and make it available:
     // this is completely read only
@@ -39,4 +71,10 @@ class EmojiMemoryGameViewModel: ObservableObject {
         model.choose(card)
     }
     
+    func startNewGame() {
+        emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
+        emojiThemeModel.emojis.shuffle() // Assignment2 - Task11
+        model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
+    }
+        
 }
