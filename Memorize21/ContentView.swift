@@ -13,22 +13,26 @@ struct ContentView: View {
     
     // the view who draws the model
     var body: some View {
+        VStack {
+            Text(gameViewModel.emojiThemeName)
+                .font(.title)
             ScrollView {
-                // Lazy about accessing the body vars in the view
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    // \.self means: use the emoji String itself as identifier
-                    // the emoji is just the argument to the closure
-                    ForEach(gameViewModel.cards) { card in
-                        CardView(card: card)
-                            .aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                gameViewModel.choose(card)
-                            }
+                    // Lazy about accessing the body vars in the view
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
+                        // \.self means: use the emoji String itself as identifier
+                        // the emoji is just the argument to the closure
+                        ForEach(gameViewModel.cards) { card in
+                            CardView(card: card)
+                                .aspectRatio(2/3, contentMode: .fit)
+                                .onTapGesture {
+                                    gameViewModel.choose(card)
+                                }
+                        }
                     }
                 }
-            }
-            .foregroundColor(gameViewModel.emojiThemeColor)
+                .foregroundColor(gameViewModel.emojiThemeColor)
             .padding(.horizontal)
+        }
     }
 }
 

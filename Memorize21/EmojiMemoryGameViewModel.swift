@@ -86,6 +86,10 @@ class EmojiMemoryGameViewModel: ObservableObject {
         }
     }
     
+    var emojiThemeName: String {
+        emojiThemeModel.name
+    }
+    
     // MARK: - User intents
     
     func choose(_ card: MemoryGameModel<String>.Card) {
