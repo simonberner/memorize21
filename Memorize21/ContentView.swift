@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .foregroundColor(.red)
+            .foregroundColor(gameViewModel.emojiThemeColor)
             .padding(.horizontal)
     }
 }

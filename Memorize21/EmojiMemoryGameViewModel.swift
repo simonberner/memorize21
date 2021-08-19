@@ -25,7 +25,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
         EmojiThemeModel(name: "Objects",
                    emojis: ["🕯", "🪚", "🎁", "🛀🏾", "✂️", "🪄", "🎱", "🔓", "🧲", "💰", "🧯", "📡"],
                    numberOfPairsOfCards: 12,
-                   color: "black"),
+                   color: "pink"),
         EmojiThemeModel(name: "Flags",
                    emojis: ["🇯🇵", "🇦🇴", "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "🇪🇷", "🇲🇶", "🇪🇸", "🇿🇦", "🇪🇺", "🇧🇷", "🇹🇿", "🇩🇰", "🇨🇦"],
                    numberOfPairsOfCards: 12,
@@ -33,7 +33,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
         EmojiThemeModel(name: "Sport",
                    emojis: ["🏄🏾‍♀️", "🪂", "🤸🏿‍♂️", "🧘🏽‍♂️", "🧗🏽‍♂️", "🤺", "🤾🏽‍♂️", "🏌🏽‍♀️", "🤽🏽‍♀️", "🚴🏽‍♀️", "🚣🏽", "🏇🏾"],
                    numberOfPairsOfCards: 12,
-                   color: "orange"),
+                   color: "purple"),
         EmojiThemeModel(name: "Vehicles",
                    emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
                    numberOfPairsOfCards: 12,
@@ -41,7 +41,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
         EmojiThemeModel(name: "Halloween",
                    emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
                    numberOfPairsOfCards: 10,
-                   color: "red")
+                   color: "orange")
     ]
     
     // this is a type function because it is static and belongs to the class (global scope) and not an instance of it
@@ -65,7 +65,28 @@ class EmojiMemoryGameViewModel: ObservableObject {
         return model.cards
     }
     
-    // MARK: - Intents
+    var emojiThemeColor: Color {
+        switch emojiThemeModel.color {
+        case "green":
+            return .green
+        case "blue":
+            return .blue
+        case "pink":
+            return .pink
+        case "yellow":
+            return .yellow
+        case "purple":
+            return .purple
+        case "red":
+            return .red
+        case "orange":
+            return .orange
+        default:
+            return .black
+        }
+    }
+    
+    // MARK: - User intents
     
     func choose(_ card: MemoryGameModel<String>.Card) {
         model.choose(card)
