@@ -70,6 +70,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             cards.append(Card( content: content, id: pairIndex*2+1))
 
         }
+        cards.shuffle() // Assignment2 - Task13
     }
     
     // MemoryGameModel.Card
