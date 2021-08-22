@@ -65,6 +65,10 @@ class EmojiMemoryGameViewModel: ObservableObject {
         return model.cards
     }
     
+    var score: Int {
+        return model.score
+    }
+    
     var emojiThemeColor: Color {
         switch emojiThemeModel.color {
         case "green":

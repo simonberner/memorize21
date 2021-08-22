@@ -10,6 +10,8 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int?
     
+    private(set) var score = 0
+    
     // the external name of the argument is blank _
     // the internal name of the argument is then card
     // (all arguments to functions are lets)
@@ -24,16 +26,31 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
            !cards[chosenIndex].isMatched
         {
             if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
+                // if the content of the two cards (chosenIndex, potentialMatchIndex) are equal,
+                // set the isMatched of the two cards to true and add two points to the total score
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += 2
+                    // else if one of the two cards (not their content!) has already been seen (face-up),
+                    // then penalise with -1 point of the total score
+                } else {
+                    if cards[chosenIndex].hasAlreadyBeenSeen || cards[potentialMatchIndex].hasAlreadyBeenSeen {
+                        score -= 1
+                    }
                 }
                 indexOfTheOneAndOnlyFaceUpCard = nil
+                // else (if a card is facing up) turn it face down
+                // and mark the card as already been seen
+                // and set the chosenIndex for the current face-up card
             } else {
                 // turning all the cards face down
                 // .indices: returns the range 0..<cards.count
                 for index in cards.indices {
-                    cards[index].isFaceUp = false
+                    if cards[index].isFaceUp {
+                        cards[index].isFaceUp = false
+                        cards[index].hasAlreadyBeenSeen = true
+                    }
                 }
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
             }
@@ -62,6 +79,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     struct Card: Identifiable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var hasAlreadyBeenSeen: Bool = false // Assignment2 - Task15&16
         var content: CardContent // this is a made up don't care (generics)
         var id: Int // Int type but also could be UUID
     }

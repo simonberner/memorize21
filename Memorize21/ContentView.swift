@@ -14,8 +14,14 @@ struct ContentView: View {
     // the view who draws the model
     var body: some View {
         VStack {
-            Text(gameViewModel.emojiThemeName)
-                .font(.title)
+            HStack {
+                Text(gameViewModel.emojiThemeName)
+                    .font(.title)
+                Spacer()
+                Text("Score: \(gameViewModel.score)")
+            }
+            .padding()
+            
             ScrollView {
                     // Lazy about accessing the body vars in the view
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
@@ -29,9 +35,23 @@ struct ContentView: View {
                                 }
                         }
                     }
-                }
-                .foregroundColor(gameViewModel.emojiThemeColor)
+            }
+            .foregroundColor(gameViewModel.emojiThemeColor)
             .padding(.horizontal)
+            Button(action: {
+                gameViewModel.startNewGame()
+            }, label: {
+                HStack {
+                    Image(systemName: "restart.circle")
+                    Text("New Game")
+                        .fontWeight(.semibold)
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .cornerRadius(40)
+            })
+            .accessibility(label: Text("NewGame"))
         }
     }
 }
