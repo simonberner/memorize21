@@ -20,7 +20,6 @@ class EmojiMemoryGameViewModel: ObservableObject {
                    color: "green"),
         EmojiThemeModel(name: "Smileys",
                    emojis: ["😀", "☺️", "☹️", "🤬", "🥶", "😴", "🥱", "😢", "🥳", "🤩", "🥰", "😷"],
-                   numberOfPairsOfCards: 8,
                    color: "blue"),
         EmojiThemeModel(name: "Objects",
                    emojis: ["🕯", "🪚", "🎁", "🛀🏾", "✂️", "🪄", "🎱", "🔓", "🧲", "💰", "🧯", "📡"],
@@ -46,6 +45,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     
     // this is a type function because it is static and belongs to the class (global scope) and not an instance of it
     private static func createMemoryGame(emojiThemeModel: EmojiThemeModel) -> MemoryGameModel<String> {
+        // init the MemoryGameModel with numberOfPairsOfCards and a closure with the argument 'pairIndex'
         MemoryGameModel<String>(numberOfPairsOfCards: emojiThemeModel.numberOfPairsOfCards) { pairIndex in
             return emojiThemeModel.emojis[pairIndex]
         }

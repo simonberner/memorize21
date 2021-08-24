@@ -13,4 +13,12 @@ struct EmojiThemeModel {
         self.numberOfPairsOfCards = numberOfPairsOfCards > emojis.count ? emojis.count : numberOfPairsOfCards // Assignment2 - Task7
         self.color = color
     }
+    
+    // Assignment2 - ExtraCredit1
+    init(name: String, emojis: Array<String>, color: String) {
+        self.name = name
+        self.emojis = emojis
+        self.numberOfPairsOfCards = emojis.count
+        self.color = color
+    }
 }
