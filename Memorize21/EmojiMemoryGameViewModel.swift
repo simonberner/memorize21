@@ -90,6 +90,27 @@ class EmojiMemoryGameViewModel: ObservableObject {
         }
     }
     
+    var emojiThemeColorGradient: Gradient {
+        switch emojiThemeModel.color {
+        case "green":
+            return Gradient(colors: [.green, .white])
+        case "blue":
+            return Gradient(colors: [.blue, .white])
+        case "pink":
+            return Gradient(colors: [.pink, .white])
+        case "yellow":
+            return Gradient(colors: [.yellow, .white])
+        case "purple":
+            return Gradient(colors: [.purple, .white])
+        case "red":
+            return Gradient(colors: [.red, .white])
+        case "orange":
+            return Gradient(colors: [.orange, .white])
+        default:
+            return Gradient(colors: [.black, .white])
+        }
+    }
+    
     var emojiThemeName: String {
         emojiThemeModel.name
     }

@@ -28,7 +28,7 @@ struct ContentView: View {
                         // \.self means: use the emoji String itself as identifier
                         // the emoji is just the argument to the closure
                         ForEach(gameViewModel.cards) { card in
-                            CardView(card: card)
+                            CardView(card: card, gameViewModel: gameViewModel)
                                 .aspectRatio(2/3, contentMode: .fit)
                                 .onTapGesture {
                                     gameViewModel.choose(card)
@@ -61,6 +61,7 @@ struct ContentView: View {
 // the view is constantly rebuild when something changes in view
 struct CardView: View {
     let card: MemoryGameModel<String>.Card
+    let gameViewModel: EmojiMemoryGameViewModel
     
     var body: some View {
         ZStack {
@@ -72,7 +73,11 @@ struct CardView: View {
             } else if card.isMatched {
                 shape.opacity(0)
             } else {
-                shape.fill()
+                // Assignment2 - ExtraCredit3
+                shape.fill(LinearGradient(
+                            gradient: gameViewModel.emojiThemeColorGradient,
+                                startPoint: .leading,
+                                endPoint: .topTrailing))
             }
         }
     }
