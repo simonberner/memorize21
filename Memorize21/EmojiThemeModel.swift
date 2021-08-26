@@ -14,6 +14,15 @@ struct EmojiThemeModel {
         self.color = color
     }
     
+    // Assignment2 - ExtraCredit2
+    // Random number of cards
+    init(name: String, emojis: Array<String>, randomNumberOfPairsOfCards: Bool, color: String) {
+        self.name = name
+        self.emojis = emojis
+        self.numberOfPairsOfCards = randomNumberOfPairsOfCards ? Int.random(in: 2...emojis.count) : emojis.count // ternary operator
+        self.color = color
+    }
+    
     // Assignment2 - ExtraCredit1
     init(name: String, emojis: Array<String>, color: String) {
         self.name = name

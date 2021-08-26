@@ -16,7 +16,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     private static var emojiThemeModels: Array<EmojiThemeModel> = [
         EmojiThemeModel(name: "Animals",
                    emojis: ["🐍", "🐈", "🐇", "🦖", "🪲", "🐬", "🦒", "🦢", "🐿", "🦔", "🐘", "🦧"],
-                   numberOfPairsOfCards: 12,
+                   randomNumberOfPairsOfCards: true,
                    color: "green"),
         EmojiThemeModel(name: "Smileys",
                    emojis: ["😀", "☺️", "☹️", "🤬", "🥶", "😴", "🥱", "😢", "🥳", "🤩", "🥰", "😷"],
@@ -31,7 +31,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
                    color: "yellow"),
         EmojiThemeModel(name: "Sport",
                    emojis: ["🏄🏾‍♀️", "🪂", "🤸🏿‍♂️", "🧘🏽‍♂️", "🧗🏽‍♂️", "🤺", "🤾🏽‍♂️", "🏌🏽‍♀️", "🤽🏽‍♀️", "🚴🏽‍♀️", "🚣🏽", "🏇🏾"],
-                   numberOfPairsOfCards: 12,
+                   randomNumberOfPairsOfCards: true,
                    color: "purple"),
         EmojiThemeModel(name: "Vehicles",
                    emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
