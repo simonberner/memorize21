@@ -9,6 +9,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     private(set) var cards: Array<Card>
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int?
+    private var startDateOfFirstChosenCard: Date?
     
     private(set) var score = 0
     
@@ -21,24 +22,20 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         // ($0.id: we are passing in a card's id in the cards array as argument to the closure)
         // first term will be executed and assigned to chosenIndex and then the second and third term
         // are executed where chosenIndex then is set
-        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id }),
-           !cards[chosenIndex].isFaceUp,
-           !cards[chosenIndex].isMatched
+        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id }), // if the card is in the cards array
+           !cards[chosenIndex].isFaceUp, // AND the card at the chosenIndex is not faceUp
+           !cards[chosenIndex].isMatched // AND the card at the chosenIndex is not matched
         {
-            if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
+            // if 'potentialMatchIndex' is not nil (the second card is chosen)
+            if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard { // computed property
                 // if the content of the two cards (chosenIndex, potentialMatchIndex) are equal,
-                // set the isMatched of the two cards to true and add two points to the total score
+                // set the isMatched of the two cards to true
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
-                    score += 2
-                    // else if one of the two cards (not their content!) has already been seen (face-up),
-                    // then penalise with -1 point of the total score
-                } else {
-                    if cards[chosenIndex].hasAlreadyBeenSeen || cards[potentialMatchIndex].hasAlreadyBeenSeen {
-                        score -= 1
-                    }
                 }
+                // calculate the score when two cards are chosen
+                calculateScore(firstCard: cards[chosenIndex], secondCard: cards[potentialMatchIndex], startDate: startDateOfFirstChosenCard!)
                 indexOfTheOneAndOnlyFaceUpCard = nil
                 // else (if a card is facing up) turn it face down
                 // and mark the card as already been seen
@@ -46,16 +43,45 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             } else {
                 // turning all the cards face down
                 // .indices: returns the range 0..<cards.count
+                // so for every card do:
                 for index in cards.indices {
                     if cards[index].isFaceUp {
                         cards[index].isFaceUp = false
                         cards[index].hasAlreadyBeenSeen = true
+                        cards[index].isFirstCard = false
                     }
                 }
+                // when first card is chosen we jump right here
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+                cards[chosenIndex].isFirstCard = true
             }
             cards[chosenIndex].isFaceUp.toggle()
+            if cards[chosenIndex].isFirstCard {
+                startDateOfFirstChosenCard = Date()
+                print("1st card get chosen at: \(startDateOfFirstChosenCard ?? Date())")
+                cards[chosenIndex].isFirstCard = false
+            }
             print("all cards = \(cards)")
+        }
+    }
+    
+    // Scoring system:
+    // Gives more(for a match) or less (for a mismatch) points when choosing the 2nd card more quickly (based on the time difference in seconds)
+    mutating func calculateScore(firstCard: Card, secondCard: Card, startDate: Date) {
+        let endDate = Date()
+        print("2nd card get chosen at: \(endDate)")
+
+        // https://developer.apple.com/documentation/foundation/timeinterval
+        // diffInSeconds: Double
+        let diffInSeconds = endDate.timeIntervalSince(startDate).rounded()
+        print("2nd card get chosen \(diffInSeconds) seconds later")
+
+        if firstCard.content == secondCard.content {
+            score += max(10 - Int(diffInSeconds), 1) * 2
+        } else {
+            if firstCard.hasAlreadyBeenSeen || secondCard.hasAlreadyBeenSeen {
+                score -= max(10 - Int(diffInSeconds), 1)
+            }
         }
     }
     
@@ -80,6 +106,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     struct Card: Identifiable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var isFirstCard: Bool = false
         var hasAlreadyBeenSeen: Bool = false // Assignment2 - Task15&16
         var content: CardContent // this is a made up don't care (generics)
         var id: Int // Int type but also could be UUID
