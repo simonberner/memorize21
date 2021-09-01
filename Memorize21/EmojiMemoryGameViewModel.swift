@@ -6,6 +6,7 @@ import SwiftUI
 // (remember: classes are mutable, this is a pro and con because anyone who has a pointer to the same
 // instance or var of a class, can change it!)
 class EmojiMemoryGameViewModel: ObservableObject {
+    typealias Card = MemoryGameModel<String>.Card
     
     init() {
         emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
@@ -61,7 +62,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     // this is completely read only
     // var who's value is calculated by a function (return model.cards)
     // as an array is a struct, this the function returns a fresh copy of model.cards each time
-    var cards: Array<MemoryGameModel<String>.Card> {
+    var cards: Array<Card> {
         return model.cards
     }
     
@@ -117,7 +118,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
     
     // MARK: - User intents
     
-    func choose(_ card: MemoryGameModel<String>.Card) {
+    func choose(_ card: Card) {
         model.choose(card)
     }
     

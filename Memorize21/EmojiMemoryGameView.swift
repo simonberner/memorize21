@@ -60,7 +60,7 @@ struct EmojiMemoryGameView: View {
 // 'self' here is the whole CardView
 // the view is constantly rebuild when something changes in view
 struct CardView: View {
-    let card: MemoryGameModel<String>.Card
+    let card: EmojiMemoryGameViewModel.Card
     let gameViewModel: EmojiMemoryGameViewModel
     
     var body: some View {
