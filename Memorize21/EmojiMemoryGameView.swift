@@ -5,7 +5,7 @@ import SwiftUI
 // (application state flows through pure functions)
 // (see also https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
 // View which reflect the model
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     // we would probably better name that var 'game/memoryGame', but for
     // learning purposes (to better see which is the viewModel) we call it gameViewModel
     // (when an ObservedObject changes, the entire body of a view gets automatically redrawn!)
@@ -115,9 +115,9 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let gameViewModel = EmojiMemoryGameViewModel()
-        ContentView(gameViewModel: gameViewModel)
+        EmojiMemoryGameView(gameViewModel: gameViewModel)
             .preferredColorScheme(.dark)
-        ContentView(gameViewModel: gameViewModel)
+        EmojiMemoryGameView(gameViewModel: gameViewModel)
             .preferredColorScheme(.light)
     }
 }

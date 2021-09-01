@@ -108,7 +108,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         var isMatched: Bool = false
         var isFirstCard: Bool = false
         var hasAlreadyBeenSeen: Bool = false // Assignment2 - Task15&16
-        var content: CardContent // this is a made up don't care (generics)
-        var id: Int // Int type but also could be UUID
+        let content: CardContent // this is a made up don't care (generics)
+        let id: Int // Int type but also could be UUID
     }
 }
