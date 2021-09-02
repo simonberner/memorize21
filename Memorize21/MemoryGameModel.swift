@@ -88,7 +88,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     // free init gets lost with this init
     // second argument must be a function with an argument (Int) pairIndex which returns a something of type CardContent
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
-        cards = Array<Card>()
+        cards = [] // Swift can infer the type here from the above declaration
         // add numberOfParisOfCards x 2 cards to cards array
         for pairIndex in 0..<numberOfPairsOfCards {
             let content = createCardContent(pairIndex)
@@ -104,10 +104,10 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     // is another model (e.g. Poker) which also has a type Card.
     // By nesting it like here, we define that the Card belongs to the MemoryGameModel!
     struct Card: Identifiable {
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
-        var isFirstCard: Bool = false
-        var hasAlreadyBeenSeen: Bool = false // Assignment2 - Task15&16
+        var isFaceUp = false
+        var isMatched = false
+        var isFirstCard = false
+        var hasAlreadyBeenSeen = false // Assignment2 - Task15&16
         let content: CardContent // this is a made up don't care (generics)
         let id: Int // Int type but also could be UUID
     }

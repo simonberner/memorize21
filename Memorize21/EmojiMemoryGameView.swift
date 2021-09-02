@@ -62,7 +62,7 @@ struct EmojiMemoryGameView: View {
 struct CardView: View {
     let card: EmojiMemoryGameViewModel.Card
     let gameViewModel: EmojiMemoryGameViewModel
-    
+        
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20)
