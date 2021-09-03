@@ -44,7 +44,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                 // turning all the cards face down
                 // .indices: returns the range 0..<cards.count
                 // so for every card do:
-                for index in cards.indices {
+                cards.indices.forEach { index in
                     if cards[index].isFaceUp {
                         cards[index].isFaceUp = false
                         cards[index].hasAlreadyBeenSeen = true
