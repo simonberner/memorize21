@@ -22,20 +22,13 @@ struct EmojiMemoryGameView: View {
             }
             .padding()
             
-            ScrollView {
-                    // Lazy about accessing the body vars in the view
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                        // \.self means: use the emoji String itself as identifier
-                        // the emoji is just the argument to the closure
-                        ForEach(gameViewModel.cards) { card in
-                            CardView(card: card, gameViewModel: gameViewModel)
-                                .aspectRatio(2/3, contentMode: .fit)
-                                .onTapGesture {
-                                    gameViewModel.choose(card)
-                                }
-                        }
+            AspectVGrid(items: gameViewModel.cards, aspectRatio: 2/3, content: { card in
+                CardView(card: card, gameViewModel: gameViewModel)
+                    .padding(4)
+                    .onTapGesture {
+                        gameViewModel.choose(card)
                     }
-            }
+            })
             .foregroundColor(gameViewModel.emojiThemeColor)
             .padding(.horizontal)
             Button(action: {
