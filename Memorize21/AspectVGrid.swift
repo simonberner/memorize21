@@ -7,12 +7,20 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
     var content: (Item) -> ItemView
     
     var body: some View {
+        // the Geometry Reader takes all the space which is offered to it
+        // and offers it to the view inside of it
         GeometryReader { geometry in
-            let width: CGFloat = widthThatFits(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio)
-            LazyVGrid(columns: [adaptiveGridItem(width: width)]) {
-                ForEach(items) { item in
-                    content(item).aspectRatio(aspectRatio, contentMode: .fit)
+            // make the things inside the GeometryReader flexible in size by adding it to a VStack
+            VStack {
+                let width: CGFloat = widthThatFits(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio)
+                // putting the grid a the top of the VStack
+                LazyVGrid(columns: [adaptiveGridItem(width: width)]) {
+                    ForEach(items) { item in
+                        content(item).aspectRatio(aspectRatio, contentMode: .fit)
+                    }
                 }
+                // ...and then a Spacer just to turn the VStack flexible in size
+                Spacer(minLength: 0)
             }
         }
     }
