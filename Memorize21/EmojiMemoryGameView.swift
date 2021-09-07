@@ -83,10 +83,11 @@ struct CardView: View {
         Font.system(size: min(size.width, size.height) * DrawingConstants.fontScale)
     }
     
+    // for drawing we use CGFloat, not Int or Double!
     private struct DrawingConstants {
-        static let cornerRadius: CGFloat = 20 // we use CGFloat when drawing, not Int or Double!
+        static let cornerRadius: CGFloat = 10
         static let lineWidth: CGFloat = 3
-        static let fontScale: CGFloat = 0.8
+        static let fontScale: CGFloat = 0.75
     }
 }
 
