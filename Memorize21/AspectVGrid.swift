@@ -6,6 +6,17 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
     var aspectRatio: CGFloat
     var content: (Item) -> ItemView
     
+    // closure (func types) are reference types, they live in the heap and are thus pointed to
+    // the swift compiler needs to know that it only needs to inline the passed in closure and
+    // not create memory in the heap for it
+    // here: the param content gets assigned to self.content and used later on, so it has to
+    // "escape" the scope of init
+    init(items: [Item], aspectRatio: CGFloat, @ViewBuilder content: @escaping (Item) -> ItemView) {
+        self.items = items
+        self.aspectRatio = aspectRatio
+        self.content = content
+    }
+    
     var body: some View {
         // the Geometry Reader takes all the space which is offered to it
         // and offers it to the view inside of it

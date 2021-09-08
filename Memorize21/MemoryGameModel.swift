@@ -104,7 +104,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     // is another model (e.g. Poker) which also has a type Card.
     // By nesting it like here, we define that the Card belongs to the MemoryGameModel!
     struct Card: Identifiable {
-        var isFaceUp = true
+        var isFaceUp = false
         var isMatched = false
         var isFirstCard = false
         var hasAlreadyBeenSeen = false // Assignment2 - Task15&16

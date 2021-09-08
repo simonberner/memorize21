@@ -22,13 +22,18 @@ struct EmojiMemoryGameView: View {
             }
             .padding()
             
-            AspectVGrid(items: gameViewModel.cards, aspectRatio: 2/3, content: { card in
-                CardView(card: card, gameViewModel: gameViewModel)
-                    .padding(4)
-                    .onTapGesture {
-                        gameViewModel.choose(card)
-                    }
-            })
+            AspectVGrid(items: gameViewModel.cards, aspectRatio: 2/3) { card in
+                // this is a valid view builder: if else returns a view in any case
+                if card.isMatched && !card.isFaceUp {
+                    Rectangle().opacity(0)
+                } else {
+                    CardView(card: card, gameViewModel: gameViewModel)
+                        .padding(4)
+                        .onTapGesture {
+                            gameViewModel.choose(card)
+                        }
+                }
+            }
             .foregroundColor(gameViewModel.emojiThemeColor)
             .padding(.horizontal)
             Button(action: {
@@ -66,14 +71,12 @@ struct CardView: View {
                     shape.fill().foregroundColor(.white)
                     shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
                     Text(card.content).font(font(in: geometry.size))
-                } else if card.isMatched {
-                    shape.opacity(0)
                 } else {
                     // Assignment2 - ExtraCredit3
                     shape.fill(LinearGradient(
                                 gradient: gameViewModel.emojiThemeColorGradient,
-                                    startPoint: .leading,
-                                    endPoint: .topTrailing))
+                                startPoint: .leading,
+                                endPoint: .topTrailing))
                 }
             }
         })
