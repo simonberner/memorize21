@@ -36,6 +36,15 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
         }
     }
     
+    /**
+     Returns an adaptive GritItem with the width and a spacing of 0
+     
+     - returns:
+     A GridItem with spacing 0
+     
+     - parameters:
+        - width: The minimum width the GridItem has.
+     */
     private func adaptiveGridItem(width: CGFloat) -> GridItem {
         var gridItem = GridItem(.adaptive(minimum: width))
         gridItem.spacing = 0
