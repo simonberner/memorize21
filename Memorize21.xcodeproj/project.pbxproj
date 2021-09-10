@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150EAA1826EA966600BFEA51 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150EAA1726EA966600BFEA51 /* Pie.swift */; };
 		1539EBBD26C45D0F000C2BD8 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */; };
 		1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */; };
 		158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158410E626E65E7400C860BB /* AspectVGrid.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150EAA1726EA966600BFEA51 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
 		1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		156B8CD826C3042E00E6ECED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				15DD7BFF26BEAFEC0063AB00 /* Preview Content */,
 				15AB7A5B26CC4DDE00A83FA6 /* EmojiThemeModel.swift */,
 				158410E626E65E7400C860BB /* AspectVGrid.swift */,
+				150EAA1726EA966600BFEA51 /* Pie.swift */,
 			);
 			path = Memorize21;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
 				158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */,
 				15DD7BFC26BEAFEC0063AB00 /* EmojiMemoryGameView.swift in Sources */,
+				150EAA1826EA966600BFEA51 /* Pie.swift in Sources */,
 				15DD7BFA26BEAFEC0063AB00 /* Memorize21App.swift in Sources */,
 				1539EBBD26C45D0F000C2BD8 /* MemoryGameModel.swift in Sources */,
 			);

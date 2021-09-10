@@ -70,6 +70,11 @@ struct CardView: View {
                 if card.isFaceUp {
                     shape.fill().foregroundColor(.white)
                     shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
+                    // 0 degrees is to the right of the iOS coordinate system (x:0/y:0 in the upper left)
+                    // that is why we have to subtract 90deg (when thinking in compass rose https://en.wikipedia.org/wiki/Compass_rose)
+                    Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 110-90))
+                        .padding(DrawingConstants.piePadding)
+                        .opacity(DrawingConstants.pieOpacity)
                     Text(card.content).font(font(in: geometry.size))
                 } else {
                     // Assignment2 - ExtraCredit3
@@ -90,7 +95,10 @@ struct CardView: View {
     private struct DrawingConstants {
         static let cornerRadius: CGFloat = 10
         static let lineWidth: CGFloat = 3
-        static let fontScale: CGFloat = 0.75
+        static let fontScale: CGFloat = 0.7
+        static let circleOpacity = 0.5 // inferred type is Double here
+        static let piePadding: CGFloat = 5
+        static let pieOpacity = 0.5 // inferred type is Double here
     }
 }
 
@@ -126,9 +134,11 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let gameViewModel = EmojiMemoryGameViewModel()
-        EmojiMemoryGameView(gameViewModel: gameViewModel)
-            .preferredColorScheme(.dark)
-        EmojiMemoryGameView(gameViewModel: gameViewModel)
-            .preferredColorScheme(.light)
+        gameViewModel.choose(gameViewModel.cards.first!)
+        return EmojiMemoryGameView(gameViewModel: gameViewModel)
+//        EmojiMemoryGameView(gameViewModel: gameViewModel)
+//            .preferredColorScheme(.dark)
+//        EmojiMemoryGameView(gameViewModel: gameViewModel)
+//            .preferredColorScheme(.light)
     }
 }
