@@ -66,24 +66,14 @@ struct CardView: View {
         // how much space they have
         GeometryReader (content: { geometry in
             ZStack {
-                let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
-                if card.isFaceUp {
-                    shape.fill().foregroundColor(.white)
-                    shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
-                    // 0 degrees is to the right of the iOS coordinate system (x:0/y:0 in the upper left)
-                    // that is why we have to subtract 90deg (when thinking in compass rose https://en.wikipedia.org/wiki/Compass_rose)
-                    Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 110-90))
-                        .padding(DrawingConstants.piePadding)
-                        .opacity(DrawingConstants.pieOpacity)
-                    Text(card.content).font(font(in: geometry.size))
-                } else {
-                    // Assignment2 - ExtraCredit3
-                    shape.fill(LinearGradient(
-                                gradient: gameViewModel.emojiThemeColorGradient,
-                                startPoint: .leading,
-                                endPoint: .topTrailing))
-                }
+                // 0 degrees is to the right of the iOS coordinate system (x:0/y:0 in the upper left)
+                // that is why we have to subtract 90deg (when thinking in compass rose https://en.wikipedia.org/wiki/Compass_rose)
+                Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 110-90))
+                    .padding(DrawingConstants.piePadding)
+                    .opacity(DrawingConstants.pieOpacity)
+                Text(card.content).font(font(in: geometry.size))
             }
+            .cardify(isFaceUp: card.isFaceUp, cardColor: gameViewModel.emojiThemeColorGradient)
         })
     }
     
@@ -93,8 +83,6 @@ struct CardView: View {
     
     // for drawing we use CGFloat, not Int or Double!
     private struct DrawingConstants {
-        static let cornerRadius: CGFloat = 10
-        static let lineWidth: CGFloat = 3
         static let fontScale: CGFloat = 0.7
         static let circleOpacity = 0.5 // inferred type is Double here
         static let piePadding: CGFloat = 5
