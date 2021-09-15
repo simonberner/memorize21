@@ -71,10 +71,24 @@ struct CardView: View {
                 Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 110-90))
                     .padding(DrawingConstants.piePadding)
                     .opacity(DrawingConstants.pieOpacity)
-                Text(card.content).font(font(in: geometry.size))
+                Text(card.content)
+//                    .font(font(in: geometry.size)) // font is NOT animatable
+                    // animations animate changes on screen
+                    // the arguments to a view modifier need to change in order that
+                    // the view modifier can be animated
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0)) // this is now animatable
+                    // implicit animation which only animates the views above it
+                    // so the placement of implicit animation modifiers is important
+                    .animation(.linear(duration: 1).repeatForever(autoreverses: false))
+                    .font(Font.system(size: DrawingConstants.fontSize)) // fixed font size which does not have to animate
+                    .scaleEffect(scale(thatFits: geometry.size))
             }
             .cardify(isFaceUp: card.isFaceUp, cardColor: gameViewModel.emojiThemeColorGradient)
         })
+    }
+    
+    private func scale(thatFits size: CGSize) -> CGFloat{
+        min(size.width, size.height) / (DrawingConstants.fontScale / DrawingConstants.fontScale)
     }
     
     private func font(in size: CGSize) -> Font {
@@ -87,6 +101,7 @@ struct CardView: View {
         static let circleOpacity = 0.5 // inferred type is Double here
         static let piePadding: CGFloat = 5
         static let pieOpacity = 0.5 // inferred type is Double here
+        static let fontSize: CGFloat = 32
     }
 }
 
@@ -122,11 +137,11 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let gameViewModel = EmojiMemoryGameViewModel()
-        gameViewModel.choose(gameViewModel.cards.first!)
-        return EmojiMemoryGameView(gameViewModel: gameViewModel)
-//        EmojiMemoryGameView(gameViewModel: gameViewModel)
-//            .preferredColorScheme(.dark)
-//        EmojiMemoryGameView(gameViewModel: gameViewModel)
-//            .preferredColorScheme(.light)
+//        gameViewModel.choose(gameViewModel.cards.first!)
+//        return EmojiMemoryGameView(gameViewModel: gameViewModel)
+        EmojiMemoryGameView(gameViewModel: gameViewModel)
+            .preferredColorScheme(.dark)
+        EmojiMemoryGameView(gameViewModel: gameViewModel)
+            .preferredColorScheme(.light)
     }
 }
