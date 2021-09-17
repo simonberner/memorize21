@@ -76,13 +76,16 @@ struct CardView: View {
                     // animations animate changes on screen
                     // the arguments to a view modifier need to change in order that
                     // the view modifier can be animated
+                    // it is already rotating when coming on screen
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0)) // this is now animatable
-                    // implicit animation which only animates the views above it
+                    // implicit animation which only animates the view modifier above
                     // so the placement of implicit animation modifiers is important
+                    // this animation animates the change of the above var card.isMatched
                     .animation(.linear(duration: 1).repeatForever(autoreverses: false))
                     .font(Font.system(size: DrawingConstants.fontSize)) // fixed font size which does not have to animate
                     .scaleEffect(scale(thatFits: geometry.size))
             }
+            // the ZStack is passed as content to the Cardify ViewModifier
             .cardify(isFaceUp: card.isFaceUp, cardColor: gameViewModel.emojiThemeColorGradient)
         })
     }

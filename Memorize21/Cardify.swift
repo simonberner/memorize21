@@ -11,6 +11,7 @@ struct Cardify: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
+            // isMatched and isFaceUp happen simultaneously
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
@@ -20,7 +21,7 @@ struct Cardify: ViewModifier {
                             startPoint: .leading,
                             endPoint: .topTrailing))
             }
-            // in order to be animated, the content (ZStack) has be always on screen
+            // in order to be animated, the content (ZStack with the card content) has to be always on screen
             // with opacity we can only show it to the user when the content isFaceUp=true
             content
                 .opacity(isFaceUp ? 1 : 0)
