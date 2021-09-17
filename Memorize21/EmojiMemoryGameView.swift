@@ -88,7 +88,7 @@ struct CardView: View {
     }
     
     private func scale(thatFits size: CGSize) -> CGFloat{
-        min(size.width, size.height) / (DrawingConstants.fontScale / DrawingConstants.fontScale)
+        min(size.width, size.height) / (DrawingConstants.fontSize / DrawingConstants.fontScale)
     }
     
     private func font(in size: CGSize) -> Font {
