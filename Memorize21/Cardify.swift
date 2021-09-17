@@ -14,13 +14,16 @@ struct Cardify: ViewModifier {
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
-                content
             } else {
                 shape.fill(LinearGradient(
                             gradient: cardColor,
                             startPoint: .leading,
                             endPoint: .topTrailing))
             }
+            // in order to be animated, the content (ZStack) has be always on screen
+            // with opacity we can only show it to the user when the content isFaceUp=true
+            content
+                .opacity(isFaceUp ? 1 : 0)
         }
     }
     
