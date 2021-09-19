@@ -21,36 +21,43 @@ struct EmojiMemoryGameView: View {
                 Text("Score: \(gameViewModel.score)")
             }
             .padding()
-            
-            AspectVGrid(items: gameViewModel.cards, aspectRatio: 2/3) { card in
-                // this is a valid view builder: if else returns a view in any case
-                if card.isMatched && !card.isFaceUp {
-                    Rectangle().opacity(0)
-                } else {
-                    CardView(card: card, gameViewModel: gameViewModel)
-                        .padding(4)
-                        .onTapGesture {
-                            gameViewModel.choose(card)
-                        }
-                }
-            }
-            .foregroundColor(gameViewModel.emojiThemeColor)
-            .padding(.horizontal)
-            Button(action: {
-                gameViewModel.startNewGame()
-            }, label: {
-                HStack {
-                    Image(systemName: "restart.circle")
-                    Text("New Game")
-                        .fontWeight(.semibold)
-                }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(40)
-            })
-            .accessibility(label: Text("NewGame"))
+            gameBody
+            newGameButton
         }
+    }
+    
+    private var gameBody: some View {
+        AspectVGrid(items: gameViewModel.cards, aspectRatio: 2/3) { card in
+            // this is a valid view builder: if else returns a view in any case
+            if card.isMatched && !card.isFaceUp {
+                Color.clear // behaves like a view here and creates a rectangle with the color 'clear'
+            } else {
+                CardView(card: card, gameViewModel: gameViewModel)
+                    .padding(4)
+                    .onTapGesture {
+                        gameViewModel.choose(card)
+                    }
+            }
+        }
+        .foregroundColor(gameViewModel.emojiThemeColor)
+        .padding(.horizontal)
+    }
+    
+    private var newGameButton: some View {
+        Button(action: {
+            gameViewModel.startNewGame()
+        }, label: {
+            HStack {
+                Image(systemName: "restart.circle")
+                Text("New Game")
+                    .fontWeight(.semibold)
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .cornerRadius(40)
+        })
+        .accessibility(label: Text("NewGame"))
     }
 }
 
