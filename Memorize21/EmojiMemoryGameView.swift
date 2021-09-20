@@ -35,7 +35,9 @@ struct EmojiMemoryGameView: View {
                 CardView(card: card, gameViewModel: gameViewModel)
                     .padding(4)
                     .onTapGesture {
-                        gameViewModel.choose(card)
+                        withAnimation(.easeInOut(duration: 3)) {
+                            gameViewModel.choose(card)
+                        }
                     }
             }
         }
@@ -45,7 +47,13 @@ struct EmojiMemoryGameView: View {
     
     private var newGameButton: some View {
         Button(action: {
-            gameViewModel.startNewGame()
+            // all view modifiers which can be animated are being animated inclusive those from
+            // the gameBody's AspectVGrid which are needed to position the cards
+            // explicit animations are mostly used for 'user intent' functions to animate change
+            // in the ui
+            withAnimation{
+                gameViewModel.startNewGame()
+            }
         }, label: {
             HStack {
                 Image(systemName: "restart.circle")

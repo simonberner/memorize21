@@ -1,18 +1,32 @@
 import SwiftUI
 
-// creating a ViewModifier is similar to creating a View but with the difference
+// creating a AnimatableModifier is similar to creating a View but with the difference
 // that the body is a function
 // any view can now be modified and put as a cards content
-// ViewModifiers can be animated
-struct Cardify: ViewModifier {
-    var isFaceUp: Bool
+// by specifying that this is a AnimatableModifier, we take over the responsibility to
+// animate all the containing ViewModifiers
+struct Cardify: AnimatableModifier {
     var cardColor: Gradient
+    var rotation: Double // in degrees
     
+    init(isFaceUp: Bool, cardColor: Gradient) {
+        self.cardColor = cardColor
+        rotation = isFaceUp ? 0 : 180
+    }
+    
+    // this is a computed var which acts as a renaming of the var rotation
+    // this is from the protocol'Animatable' an is the required data to be animated
+    var animatableData: Double {
+        get {rotation}
+        set {rotation = newValue}
+    }
+    
+
     func body(content: Content) -> some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
             // isMatched and isFaceUp happen simultaneously
-            if isFaceUp {
+            if rotation < 90 {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
             } else {
@@ -24,8 +38,9 @@ struct Cardify: ViewModifier {
             // in order to be animated, the content (ZStack with the card content) has to be always on screen
             // with opacity we can only show it to the user when the content isFaceUp=true
             content
-                .opacity(isFaceUp ? 1 : 0)
+                .opacity(rotation < 90 ? 1 : 0)
         }
+        .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
     }
     
     
