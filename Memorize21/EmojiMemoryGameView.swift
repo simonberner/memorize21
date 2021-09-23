@@ -26,19 +26,45 @@ struct EmojiMemoryGameView: View {
         }
     }
     
+    // keep track of dealt (laid out) cards
+    // (temporary state in this view)
+    @State private var dealt = Set<Int>() // things in a Set are unique
+    
+    private func deal(_ card: EmojiMemoryGameViewModel.Card) {
+        dealt.insert(card.id)
+    }
+    
+    private func isUndealt(_ card: EmojiMemoryGameViewModel.Card) -> Bool {
+        !dealt.contains(card.id) // a card is undealt if it is NOT already in the Set
+    }
+    
     private var gameBody: some View {
         AspectVGrid(items: gameViewModel.cards, aspectRatio: 2/3) { card in
             // this is a valid view builder: if else returns a view in any case
-            if card.isMatched && !card.isFaceUp {
+            if isUndealt(card) || (card.isMatched && !card.isFaceUp) {
                 Color.clear // behaves like a view here and creates a rectangle with the color 'clear'
             } else {
                 CardView(card: card, gameViewModel: gameViewModel)
                     .padding(4)
+                    // different transition for in and out with the static func asymmetric
+                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity).animation(.easeInOut(duration: 2)))
                     .onTapGesture {
-                        withAnimation(.easeInOut(duration: 3)) {
+                        withAnimation {
                             gameViewModel.choose(card)
                         }
                     }
+            }
+        }
+        // put a view on screen after its container is on screen
+        // when in this case the container view AspectVGrid appears
+        // the func withAnimation is performed
+        .onAppear{
+            // deal the cards out
+            // withAnimation go through all my cards
+            withAnimation {
+                for card in gameViewModel.cards {
+                    deal(card)
+                }
             }
         }
         .foregroundColor(gameViewModel.emojiThemeColor)
