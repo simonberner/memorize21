@@ -6,9 +6,12 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 ![Memorize21](Memorize21/memorize21.png)
 
 ## Tech Stack
-- Xcode 12.5.1
-- Swift 5.4
+- Xcode 13.0
+- Swift 5.5
 - SwiftUI 
+
+## Code comments
+If you have the time to look at my code, you will notice an unusual amount of additional code comments which I have put along the lines. These comments are for my own learning and documentation purposes and probably would not appear in such a way in production code.
 
 ## Learnings
 ### MVVM
@@ -53,6 +56,9 @@ In the new version of the body, the @State var will continue to point the the da
 ### Markdown comments
 - [How to add Markdown comments to your code](https://www.hackingwithswift.com/example-code/language/how-to-add-markdown-comments-to-your-code)
 - [Documentation Comment Syntax](https://github.com/apple/swift/blob/main/docs/DocumentationComments.md)
+### Property Wrapper
+- [What is it?](https://docs.swift.org/swift-book/LanguageGuide/Properties.html#ID617)
+- [SwiftUI property wrappers](https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared)
 ### Animation
 - Only changes can be animated. This includes the following three things:
     - ViewModifier arguments
@@ -60,6 +66,9 @@ In the new version of the body, the @State var will continue to point the the da
     - The comings and goings (existence or not) of Views in the UI
 - Animation is showing the user changes that have already happened
 - Implicit Animations
+    - Less important kinds of animation
+    -  Golden rule: only animates view modifiers for views which are already on screen
+    - View that are coming on screen or going of screen, can be animated with the .transition modifier
     - All ViewModifier arguments that precede the animation modifier will always be animated.
     - Eg. whenever scary and upsideDown changes, the opacity/rotationEffect will be animated:
     - Without .animation(), the changes to opacity/rotation would appear instantly (not animated) on screen.
@@ -74,7 +83,19 @@ Text("Hello World")
 ```
 
 - Explicit Animations
+    - Is much more of a common way of doing animations
+    - Are independent of implicit animations when used in combination
+    - Only animates shapes and view modifiers
+    - Are used for user 'intent functions'
     - We don't attach a modifier to a view, instead we ask SwiftUI to animate the precise change we want to make.
+- Transitions
+    - A transition determines how a view appears/disappears on the screen.
+    - Transitions have their own animations: Transition.scale.animation()
+    - Are good for making the comings and goings of views looking smooth
+    - There are about 4 precanned transitions which are used the most
+    - AnyTransition is a typed erased transition
+    - [Advanced Transitions](https://swiftui-lab.com/advanced-transitions/)
 - References:
     - [How to create an explicit animation](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-an-explicit-animation)
     - [Implicit and explicit animations](https://sirkif.hashnode.dev/explore-animation-in-swiftui-part-1)
+    - [Basic Animations and Transitions](https://www.appcoda.com/learnswiftui/swiftui-animation.html)
