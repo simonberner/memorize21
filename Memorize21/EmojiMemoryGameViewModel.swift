@@ -7,14 +7,14 @@ import SwiftUI
 // instance or var of a class, can change it!)
 class EmojiMemoryGameViewModel: ObservableObject {
     typealias Card = MemoryGameModel<String>.Card
-    
+
     init() {
         emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
         emojiThemeModel.emojis.shuffle() // Assignment2 - Task5
         model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
     }
-    
-    private static var emojiThemeModels: Array<EmojiThemeModel> = [
+
+    private static var emojiThemeModels: [EmojiThemeModel] = [
         EmojiThemeModel(name: "Animals",
                    emojis: ["🐍", "🐈", "🐇", "🦖", "🪲", "🐬", "🦒", "🦢", "🐿", "🦔", "🐘", "🦧"],
                    randomNumberOfPairsOfCards: true,
@@ -43,7 +43,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
                    numberOfPairsOfCards: 10,
                    color: "orange")
     ]
-    
+
     // this is a type function because it is static and belongs to the class (global scope) and not an instance of it
     private static func createMemoryGame(emojiThemeModel: EmojiThemeModel) -> MemoryGameModel<String> {
         // init the MemoryGameModel with numberOfPairsOfCards and a closure with the argument 'pairIndex'
@@ -51,25 +51,25 @@ class EmojiMemoryGameViewModel: ObservableObject {
             return emojiThemeModel.emojis[pairIndex]
         }
     }
-    
+
     // access control - private(set): other structs/classes can look at the model, but can't change it
     // Swift detects changes in structs, that is why the model is a struct
     @Published private var model: MemoryGameModel<String>
-     
+
     private var emojiThemeModel: EmojiThemeModel
-    
+
     // to make the model fully private and make it available:
     // this is completely read only
     // var who's value is calculated by a function (return model.cards)
     // as an array is a struct, this the function returns a fresh copy of model.cards each time
-    var cards: Array<Card> {
+    var cards: [Card] {
         return model.cards
     }
-    
+
     var score: Int {
         return model.score
     }
-    
+
     var emojiThemeColor: Color {
         switch emojiThemeModel.color {
         case "green":
@@ -90,7 +90,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
             return .black
         }
     }
-    
+
     var emojiThemeColorGradient: Gradient {
         switch emojiThemeModel.color {
         case "green":
@@ -111,21 +111,21 @@ class EmojiMemoryGameViewModel: ObservableObject {
             return Gradient(colors: [.black, .white])
         }
     }
-    
+
     var emojiThemeName: String {
         emojiThemeModel.name
     }
-    
+
     // MARK: - User intents
-    
+
     func choose(_ card: Card) {
         model.choose(card)
     }
-    
+
     func startNewGame() {
         emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
         emojiThemeModel.emojis.shuffle() // Assignment2 - Task11
         model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
     }
-        
+
 }

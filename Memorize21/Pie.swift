@@ -1,21 +1,20 @@
 import SwiftUI
 
-
 struct Pie: Shape {
-    
+
     var startAngle: Angle
     var endAngle: Angle
     var clockwise = false // default value: counter clockwise
-    
+
     func path(in rect: CGRect) -> Path {
-        
+
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
         let start = CGPoint(
             x: center.x + radius * cos(CGFloat(startAngle.radians)), // type conversion works by creating new structs
             y: center.y + radius * sin(CGFloat(startAngle.radians))
         )
-        
+
         var path = Path()
         path.move(to: center)
         path.addLine(to: start)

@@ -8,19 +8,18 @@ import SwiftUI
 struct Cardify: AnimatableModifier {
     var cardColor: Gradient
     var rotation: Double // in degrees
-    
+
     init(isFaceUp: Bool, cardColor: Gradient) {
         self.cardColor = cardColor
         rotation = isFaceUp ? 0 : 180
     }
-    
+
     // this is a computed var which acts as a renaming of the var rotation
     // this is from the protocol'Animatable' an is the required data to be animated
     var animatableData: Double {
         get {rotation}
         set {rotation = newValue}
     }
-    
 
     func body(content: Content) -> some View {
         ZStack {
@@ -42,18 +41,16 @@ struct Cardify: AnimatableModifier {
         }
         .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
     }
-    
-    
+
     private struct DrawingConstants {
         static let cornerRadius: CGFloat = 10
         static let lineWidth: CGFloat = 3
     }
-    
+
 }
 
-
 extension View {
-    
+
     /**
      This function modifies any view into the card content.
      

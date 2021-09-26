@@ -6,13 +6,13 @@ import Foundation
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     // private(set): the EmojiMemoryGameViewModel shall not be able to change the cards
     // for that we have the func choose below
-    private(set) var cards: Array<Card>
-    
+    private(set) var cards: [Card]
+
     private var indexOfTheOneAndOnlyFaceUpCard: Int?
     private var startDateOfFirstChosenCard: Date?
-    
+
     private(set) var score = 0
-    
+
     // the external name of the argument is blank _
     // the internal name of the argument is then card
     // (all arguments to functions are lets)
@@ -64,7 +64,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             print("all cards = \(cards)")
         }
     }
-    
+
     // Scoring system:
     // Gives more(for a match) or less (for a mismatch) points when choosing the 2nd card more quickly (based on the time difference in seconds)
     mutating func calculateScore(firstCard: Card, secondCard: Card, startDate: Date) {
@@ -84,7 +84,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             }
         }
     }
-    
+
     // free init gets lost with this init
     // second argument must be a function with an argument (Int) pairIndex which returns a something of type CardContent
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
@@ -98,7 +98,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         }
         cards.shuffle() // Assignment2 - Task13
     }
-    
+
     // MemoryGameModel.Card
     // If taken outside, it would no longer be bound to the name of MemoryGameModel in case there
     // is another model (e.g. Poker) which also has a type Card.

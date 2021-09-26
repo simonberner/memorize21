@@ -5,7 +5,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
     var items: [Item]
     var aspectRatio: CGFloat
     var content: (Item) -> ItemView
-    
+
     // closure (func types) are reference types, they live in the heap and are thus pointed to
     // the swift compiler needs to know that it only needs to inline the passed in closure and
     // not create memory in the heap for it
@@ -16,7 +16,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
         self.aspectRatio = aspectRatio
         self.content = content
     }
-    
+
     var body: some View {
         // the Geometry Reader takes all the space which is offered to it
         // and offers it to the view inside of it
@@ -35,7 +35,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
             }
         }
     }
-    
+
     /**
      Returns an adaptive GritItem with the width and a spacing of 0
      
@@ -50,11 +50,11 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
         gridItem.spacing = 0
         return gridItem
     }
-    
+
     private func widthThatFits(itemCount: Int, in size: CGSize, itemAspectRatio: CGFloat) -> CGFloat {
         var columnCount = 1
         var rowCount = itemCount
-        
+
         repeat {
             let itemWidth = size.width / CGFloat(columnCount)
             let itemHeight = itemWidth / itemAspectRatio
@@ -69,11 +69,11 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
         }
         return floor(size.width / CGFloat(columnCount))
     }
-    
+
 }
 
-//struct AspectVGrid_Previews: PreviewProvider {
+// struct AspectVGrid_Previews: PreviewProvider {
 //    static var previews: some View {
 //        AspectVGrid()
 //    }
-//}
+// }
