@@ -19,7 +19,11 @@ struct EmojiMemoryGameView: View {
             VStack {
                 header
                 gameBody
-                newGameButton
+                HStack {
+                    newGameButton
+                    Spacer()
+                }
+                .padding(.horizontal)
             }
             deckBody
         }
@@ -131,12 +135,7 @@ struct EmojiMemoryGameView: View {
             HStack {
                 Image(systemName: "restart.circle")
                 Text("New Game")
-                    .fontWeight(.semibold)
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(40)
         })
         .accessibility(label: Text("NewGame"))
     }
