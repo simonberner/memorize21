@@ -22,7 +22,8 @@ struct Pie: Shape {
                  radius: radius,
                  startAngle: startAngle,
                  endAngle: endAngle,
-                    // origin for drawing is not the cartesian coordinate system (bottom left x:0/y:0) -> https://en.wikipedia.org/wiki/Coordinate_system
+                    // origin for drawing is not the cartesian coordinate system (bottom left x:0/y:0)
+                    // -> https://en.wikipedia.org/wiki/Coordinate_system
                     // we are drawing from the upper left! so all is upside down (180 degrees inverted)
                     // from a user point of view, we kind of auto invert here the clockwise for that reason
                  clockwise: !clockwise,
