@@ -1,20 +1,29 @@
 # Memorize 2021
 
 This is a work in progress learning project for my personal endeavours of becoming an iOS Developer one day.
-Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and runs on iOS and iPadOS (version >=14). Its purpose is to practice the MVVM paradigm, Swift and SwiftUI.
+Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and runs on iOS and iPadOS (version >=14).
 
 ![Memorize21](Memorize21/memorize21.png)
 
 ## Tech Stack
-- Xcode 13.0
-- Swift 5.5
-- SwiftUI 
+- [Xcode 13.0](https://developer.apple.com/xcode/)
+- [Swift 5.5](https://swift.org/)
+- [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+
+## Tools
+- [SwiftLint](https://github.com/realm/SwiftLint)
+
+## Architectural Design Patterns
+- [MVVM](https://matteomanferdini.com/mvvm-pattern-ios-swift/)
 
 ## Code comments
 If you have the time to look at my code, you will notice an unusual amount of additional code comments which I have put along the lines. These comments are for my own learning and documentation purposes and probably would not appear in such a way in production code.
 
 ## Learnings
+### SwiftUI
+- [Kickstart](https://matteomanferdini.com/swiftui/)
 ### MVVM
+- MVVM helps you to respect the separation of concerns design principle
 #### View
 - Is completely decoupled from the Model
 - Is reactive and always reflects the current state of the model
@@ -33,6 +42,7 @@ In the new version of the body, the @State var will continue to point the the da
 #### ViewModel
 - Interoperates the Model for the View
 #### Model
+- The model layer is the foundation of an app's architecture. 
 - Holds the permanent state of the app
 ### Gradient
 - [SwiftUI has a built-in way to apply gradient color](https://sarunw.com/posts/gradient-in-swiftui/)
@@ -59,6 +69,8 @@ In the new version of the body, the @State var will continue to point the the da
 ### Property Wrapper
 - [What is it?](https://docs.swift.org/swift-book/LanguageGuide/Properties.html#ID617)
 - [SwiftUI property wrappers](https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared)
+## View Modifier
+- [Z index](https://www.hackingwithswift.com/quick-start/swiftui/how-to-change-the-order-of-view-layering-using-z-index)
 ### Animation
 - Only changes can be animated. This includes the following three things:
     - ViewModifier arguments
@@ -99,3 +111,6 @@ Text("Hello World")
     - [How to create an explicit animation](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-an-explicit-animation)
     - [Implicit and explicit animations](https://sirkif.hashnode.dev/explore-animation-in-swiftui-part-1)
     - [Basic Animations and Transitions](https://www.appcoda.com/learnswiftui/swiftui-animation.html)
+### Tools
+- [Integrate SwiftLint into your Xcode project](https://github.com/realm/SwiftLint#xcode)
+    - [Docs](https://realm.github.io/SwiftLint/)
