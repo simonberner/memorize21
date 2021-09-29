@@ -1,4 +1,4 @@
-# Memorize 2021
+# Memorize21
 
 This is a work in progress learning project for my personal endeavours of becoming an iOS Developer one day.
 Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and runs on iOS and iPadOS (version >=14).
@@ -10,7 +10,7 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 - [Swift 5.5](https://swift.org/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
-## Tools
+## Used Tools
 - [SwiftLint](https://github.com/realm/SwiftLint)
 
 ## Architectural Design Patterns
@@ -18,6 +18,9 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 
 ## Code comments
 If you have the time to look at my code, you will notice an unusual amount of additional code comments which I have put along the lines. These comments are for my own learning and documentation purposes and probably would not appear in such a way in production code.
+
+## TestFlight
+My App is currently available for Beta Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
 
 ## Learnings
 ### SwiftUI
@@ -114,3 +117,9 @@ Text("Hello World")
 ### Tools
 - [Integrate SwiftLint into your Xcode project](https://github.com/realm/SwiftLint#xcode)
     - [Docs](https://realm.github.io/SwiftLint/)
+    - [Configuration](https://github.com/realm/SwiftLint/#configuration)
+### TestFlight
+- [Sean Allen: How to upload and distribute an App](https://www.youtube.com/watch?v=DLvdZtTAJrE)
+### Versioning
+- [Intro to Semantic Versioning](https://www.geeksforgeeks.org/introduction-semantic-versioning/)
+- [Semantic Versioning 2.0.0](https://semver.org/)
