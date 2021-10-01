@@ -51,16 +51,20 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                         cards[index].isFirstCard = false
                     }
                 }
-                // when first card is chosen we jump right here
+                // when first card gets chosen
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
                 cards[chosenIndex].isFirstCard = true
             }
+
+            // toggle the chosen card face up/down
             cards[chosenIndex].isFaceUp.toggle()
+
             if cards[chosenIndex].isFirstCard {
                 startDateOfFirstChosenCard = Date()
                 print("1st card get chosen at: \(startDateOfFirstChosenCard ?? Date())")
                 cards[chosenIndex].isFirstCard = false
             }
+
             print("all cards = \(cards)")
         }
     }
@@ -76,8 +80,10 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         let diffInSeconds = endDate.timeIntervalSince(startDate).rounded()
         print("2nd card get chosen \(diffInSeconds) seconds later")
 
+        // add to total score PLUS the extra bonus score
         if firstCard.content == secondCard.content {
-            score += max(10 - Int(diffInSeconds), 1) * 2
+            score += max(10 - Int(diffInSeconds), 1) * 2 + Int((firstCard.bonusTimeRemaining + secondCard.bonusTimeRemaining))
+        // subtract from total score
         } else {
             if firstCard.hasAlreadyBeenSeen || secondCard.hasAlreadyBeenSeen {
                 score -= max(10 - Int(diffInSeconds), 1)
@@ -99,16 +105,80 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         cards.shuffle() // Assignment2 - Task13
     }
 
-    // MemoryGameModel.Card
+    // MARK: - Declaration of the Card (MemoryGameModel.Card)
     // If taken outside, it would no longer be bound to the name of MemoryGameModel in case there
     // is another model (e.g. Poker) which also has a type Card.
     // By nesting it like here, we define that the Card belongs to the MemoryGameModel!
     struct Card: Identifiable {
-        var isFaceUp = false
-        var isMatched = false
+        var isFaceUp = false {
+            didSet { // property observer
+                if isFaceUp {
+                    startUsingBonusTime()
+                } else {
+                    stopUsingBonusTime()
+                }
+            }
+        }
+        var isMatched = false {
+            didSet {
+                stopUsingBonusTime()
+            }
+        }
         var isFirstCard = false
         var hasAlreadyBeenSeen = false // Assignment2 - Task15&16
         let content: CardContent // this is a made up don't care (generics)
         let id: Int // Int type but also could be UUID
+
+        // MARK: - Extra Bonus Score
+        /*
+         This gives some extra bonus scores if the user matches two cards before a certain
+         amount of time passes during which a card is face up. If there is no match, the card
+         will keep its pastFaceUpTime.
+         */
+
+        let bonusTimeLimit: TimeInterval = 8
+        var pastFaceUpTime: TimeInterval = 0
+        var lastFaceUpDate: Date?
+
+        var faceUpTime: TimeInterval {
+            if let lastFaceUpDate = lastFaceUpDate { // if lastFaceUpDate is not nil
+                return pastFaceUpTime + Date().timeIntervalSince(lastFaceUpDate)
+            } else {
+                return pastFaceUpTime
+            }
+        }
+
+        var bonusTimeRemaining: TimeInterval {
+            max(0, bonusTimeLimit - faceUpTime)
+        }
+
+        // percentage of the bonus time remaining
+        var bonusRemaining: Double {
+            (bonusTimeLimit > 0 && bonusTimeRemaining > 0) ? bonusTimeRemaining/bonusTimeLimit : 0
+        }
+
+        var hasEarnedBonus: Bool {
+            isMatched && bonusTimeRemaining > 0
+        }
+
+        // whether the card is currently faceUp, unmatched and has not yet used up all the bonus time available
+        var isConsumingBonusTime: Bool {
+            isFaceUp && !isMatched && bonusTimeRemaining > 0
+        }
+
+        // called when the card goes isFaceUp = true
+        private mutating func startUsingBonusTime() {
+            if lastFaceUpDate == nil {
+                lastFaceUpDate = Date()
+            }
+        }
+
+        // called when the card goes isFaceUp = false or isMatched = true
+        private mutating func stopUsingBonusTime() {
+            pastFaceUpTime = faceUpTime
+            lastFaceUpDate = nil
+
+        }
     }
+
 }
