@@ -22,10 +22,12 @@ struct EmojiMemoryGameView: View {
                 HStack {
                     newGameButton
                     Spacer()
+                    aboutButton
                 }
                 .padding(.horizontal)
             }
             deckBody
+            infoView
         }
     }
 
@@ -138,6 +140,27 @@ struct EmojiMemoryGameView: View {
             }
         })
         .accessibility(label: Text("NewGame"))
+    }
+
+    private var infoView: some View {
+        InfoView(isShowing: $showInfoView)
+    }
+
+    // The @State property wrapper exposes a binding to its underlying value,
+    // which we can get to via the $ prefix. For an @State property named swiftCount,
+    // the name of the binding is $swiftCount. This is effectively a second property
+    // that’s synthesized because of @State.
+    // (https://learnappmaking.com/binding-swiftui-how-to/)
+    @State private var showInfoView = false
+
+    private var aboutButton: some View {
+        Button(action: {
+            showInfoView = true
+        }, label: {
+            HStack {
+                Image(systemName: "info.circle")
+            }
+        })
     }
 
     private struct CardConstants {
