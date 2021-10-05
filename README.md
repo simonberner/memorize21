@@ -20,7 +20,7 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 If you have the time to look at my code, you will notice an unusual amount of additional code comments which I have put along the lines. These comments are for my own learning and documentation purposes and probably would not appear in such a way in production code.
 
 ## TestFlight
-My App is currently available for Beta Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
+My App is available for Beta Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
 
 ## Learnings
 ### SwiftUI
@@ -114,10 +114,13 @@ Text("Hello World")
     - [How to create an explicit animation](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-an-explicit-animation)
     - [Implicit and explicit animations](https://sirkif.hashnode.dev/explore-animation-in-swiftui-part-1)
     - [Basic Animations and Transitions](https://www.appcoda.com/learnswiftui/swiftui-animation.html)
+### Text and Images
+- [How to insert images into text](https://www.hackingwithswift.com/quick-start/swiftui/how-to-insert-images-into-text)
 ### Tools
 - [Integrate SwiftLint into your Xcode project](https://github.com/realm/SwiftLint#xcode)
     - [Docs](https://realm.github.io/SwiftLint/)
     - [Configuration](https://github.com/realm/SwiftLint/#configuration)
+    - [How to clean up your code formatting with SwiftLint](https://www.hackingwithswift.com/articles/97/how-to-clean-up-your-code-formatting-with-swiftlint)
 ### TestFlight
 - [Sean Allen: How to upload and distribute an App](https://www.youtube.com/watch?v=DLvdZtTAJrE)
 ### Versioning
