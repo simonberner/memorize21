@@ -22,7 +22,7 @@ struct EmojiMemoryGameView: View {
                 HStack {
                     newGameButton
                     Spacer()
-                    aboutButton
+                    infoButton
                 }
                 .padding(.horizontal)
             }
@@ -153,7 +153,7 @@ struct EmojiMemoryGameView: View {
     // (https://learnappmaking.com/binding-swiftui-how-to/)
     @State private var showInfoView = false
 
-    private var aboutButton: some View {
+    private var infoButton: some View {
         Button(action: {
             showInfoView = true
         }, label: {
