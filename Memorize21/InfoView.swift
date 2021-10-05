@@ -12,52 +12,56 @@ struct InfoView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: ViewConstants.cornerRadius)
                     .foregroundColor(Color.white)
-                VStack {
-                    HStack {
-                        Text("Infos")
-                            .font(.headline)
-                            .padding()
-                        Button(action: {
-                            isShowing = false
-                        }, label: {
+                ScrollView(showsIndicators: true) {
+                    VStack {
+                        HStack {
+                            Text("Infos")
+                                .font(.headline)
+                                .padding()
+                            Button(action: {
+                                isShowing = false
+                            }, label: {
+                                Spacer()
+                                HStack {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(Color.red)
+                                }
+                                .padding()
+                            })
+                        }
+                        HStack {
+                            Text("Memorize Game")
                             Spacer()
-                            HStack {
-                                Image(systemName: "xmark")
-                                    .foregroundColor(Color.red)
-                            }
+                            Text("Version 1.0.0")
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        HStack {
+                            Text("Source code")
+                            Spacer()
+                            Text(Image(systemName: "link"))
+                                .foregroundColor(.blue)
+                            Link("GitHub Repo",
+                                 destination: URL(string: "https://github.com/simonberner/memorize21")!)
+                                .foregroundColor(Color.blue)
+                        }
+                        .padding()
+                        Divider()
+                        HStack {
+                            Text("Game Scoring Rules")
+                            Spacer()
+                        }
+                        .padding()
+                        ScrollView {
+                            Text(ViewConstants.gameRules)
+                                .padding()
+                        }
+                        Divider()
+                        Text("In 2021, I have started my learning journey in iOS Development. This App here reflects all the things which I have learned so far. I hope you have fun and are enjoying the game. If you face any bugs in using it on your mobile phone, please let me know by writing an email to sibebzh@gmail.com")
                             .padding()
-                        })
-                    }
-                    HStack {
-                        Text("Memorize Game")
-                        Spacer()
-                        Text("Version 1.0.0")
-                    }
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    HStack {
-                        Text("Source code")
-                        Spacer()
-                        Text(Image(systemName: "link"))
-                            .foregroundColor(.blue)
-                        Link("GitHub Repo",
-                             destination: URL(string: "https://github.com/simonberner/memorize21")!)
-                            .foregroundColor(Color.blue)
-                    }
-                    .padding()
-                    Divider()
-                    HStack {
-                        Text("Game Scoring Rules")
+                        Text("Made with ❤️")
                         Spacer()
                     }
-                    .padding()
-                    Text(ViewConstants.gameRules)
-                        .padding()
-                    Divider()
-                    Text("In 2021, I have started my learning journey in iOS Development. This App here reflects all the things which I have learned so far. I hope you have fun and are enjoying the game. If you face any bugs in using it on your mobile phone, please let me know by writing an email to sibebzh@gmail.com")
-                        .padding()
-                    Text("Made with ❤️")
-                    Spacer()
                 }
             }
             .foregroundColor(ViewConstants.textColor)
