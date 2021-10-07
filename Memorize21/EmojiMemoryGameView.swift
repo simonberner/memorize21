@@ -142,8 +142,12 @@ struct EmojiMemoryGameView: View {
         .accessibility(label: Text("NewGame"))
     }
 
+    // here we associate a transition with the coming/going of the infoView on screen
+    // a transition on its own has no effect, it must be associated with an animation
     private var infoView: some View {
         InfoView(isShowing: $showInfoView)
+            .animation(.easeInOut(duration: 1), value: showInfoView)
+            .transition(.asymmetric(insertion: .slide, removal: .slide))
     }
 
     // The @State property wrapper exposes a binding to its underlying value,
