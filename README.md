@@ -80,6 +80,7 @@ In the new version of the body, the @State var will continue to point the the da
     - Shapes
     - The comings and goings (existence or not) of Views in the UI
 - Animation is showing the user changes that have already happened
+- [How to create simple animations](https://steelkiwi.com/blog/how-to-create-simple-swiftui-animations/)
 - Implicit Animations
     - Less important kinds of animation
     -  Golden rule: only animates view modifiers for views which are already on screen
@@ -121,6 +122,7 @@ Text("Hello World")
     - [Docs](https://realm.github.io/SwiftLint/)
     - [Configuration](https://github.com/realm/SwiftLint/#configuration)
     - [How to clean up your code formatting with SwiftLint](https://www.hackingwithswift.com/articles/97/how-to-clean-up-your-code-formatting-with-swiftlint)
+    - [SwiftLint for Swift Packages](https://blog.timac.org/2021/1003-swiftlint-for-swift-packages/)
 ### TestFlight
 - [Sean Allen: How to upload and distribute an App](https://www.youtube.com/watch?v=DLvdZtTAJrE)
 ### Versioning
