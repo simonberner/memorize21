@@ -61,6 +61,7 @@
 		15DD7C1226BEAFED0063AB00 /* Memorize21UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Memorize21UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DD7C1626BEAFED0063AB00 /* Memorize21UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memorize21UITests.swift; sourceTree = "<group>"; };
 		15DD7C1826BEAFED0063AB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15E52D89270EF266002A9B73 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 		15DD7BED26BEAFEB0063AB00 = {
 			isa = PBXGroup;
 			children = (
+				15E52D89270EF266002A9B73 /* LICENSE.md */,
 				15AC3548270CE17B00A1F348 /* PrivacyPolicy.md */,
 				156B8CD826C3042E00E6ECED /* README.md */,
 				15DD7BF826BEAFEC0063AB00 /* Memorize21 */,
