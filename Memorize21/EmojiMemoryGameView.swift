@@ -146,6 +146,9 @@ struct EmojiMemoryGameView: View {
     // a transition on its own has no effect, it must be associated with an animation
     private var infoView: some View {
         InfoView(isShowing: $showInfoView)
+            // Implicit animations are animations that you specify using the .animation() modifier.
+            // This method is used on bindings (here $showInfoView), and it asks SwiftUI to animate
+            // any changes that result in the binding’s value being modified.
             .animation(.easeInOut(duration: 1), value: showInfoView)
             .transition(.asymmetric(insertion: .slide, removal: .slide))
     }
