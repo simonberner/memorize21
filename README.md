@@ -19,8 +19,14 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 ## Code comments
 If you have the time to look at my code, you will notice an unusual amount of additional code comments which I have put along the lines. These comments are for my own learning and documentation purposes and probably would not appear in such a way in production code.
 
-## TestFlight
-My App is available for Beta Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
+## App Store
+This App is available on the [App Store](https://www.apple.com/app-store/), ready and free to be installed on your personal iPhone or iPad 😉
+
+## Beta Testing using TestFlight
+Past and upcoming beta versions of my App are available for Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
+
+## Feature Requests & Bugs
+Feature Request and Bugs can be reported by opening a [new issue](https://github.com/simonberner/memorize21/issues). I might have a look at them 😁
 
 ## Learnings
 ### SwiftUI
