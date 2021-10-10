@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		150EAA1826EA966600BFEA51 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150EAA1726EA966600BFEA51 /* Pie.swift */; };
+		152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */; };
 		1539EBBD26C45D0F000C2BD8 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */; };
 		1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */; };
 		156B840E26EE2F9D007E213F /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B840D26EE2F9D007E213F /* Cardify.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		150EAA1726EA966600BFEA51 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameExtensions.swift; sourceTree = "<group>"; };
 		1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
 		1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		156B840D26EE2F9D007E213F /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				150EAA1726EA966600BFEA51 /* Pie.swift */,
 				156B840D26EE2F9D007E213F /* Cardify.swift */,
 				159E1B8F2708AC2B0030D8DC /* InfoView.swift */,
+				152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */,
 			);
 			path = Memorize21;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
 				156B840E26EE2F9D007E213F /* Cardify.swift in Sources */,
 				158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */,
+				152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */,
 				15DD7BFC26BEAFEC0063AB00 /* EmojiMemoryGameView.swift in Sources */,
 				159E1B902708AC2B0030D8DC /* InfoView.swift in Sources */,
 				150EAA1826EA966600BFEA51 /* Pie.swift in Sources */,

@@ -32,7 +32,7 @@ struct InfoView: View {
                         HStack {
                             Text("Memorize Game")
                             Spacer()
-                            Text("Version 1.1.0")
+                            Text("Version " + UIApplication.appVersion!)
                         }
                         .padding()
                         .background(Color.gray.opacity(0.1))
