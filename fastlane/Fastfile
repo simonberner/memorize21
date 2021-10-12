@@ -16,7 +16,8 @@ update_fastlane
 default_platform(:ios)
 
 platform :ios do
-  # Beta deployment to TestFlight
+  # Beta deployment to TestFlight: fastlane beta
+  # https://docs.fastlane.tools/getting-started/ios/beta-deployment/
   desc "Push a new beta build to TestFlight"
   lane :beta do
     increment_build_number(xcodeproj: "Memorize21.xcodeproj")
@@ -28,31 +29,39 @@ platform :ios do
     build_app(scheme: "Memorize21")
     upload_to_testflight(changelog: changelog)
   end
-  # Cert and Sigh
+  # Cert and Sigh: fastlane get_dev_certs
+  # https://docs.fastlane.tools/codesigning/getting-started/#using-cert-and-sigh
   desc "Create cert and sigh"
   lane :get_dev_certs do
+    # fastlane cert: to generate a certificate with the AppleID
     cert(
       development: true
     )
+    # fastlane sigh: to create a provisioning profile
     sigh(
       development: true
     )
   end
-  # 
-  desc "Create and push a new build to the AppStore"
+  # Release to the AppStore for Review: fastlane release
+  # https://docs.fastlane.tools/getting-started/ios/appstore-deployment/
+  desc "Cert, sigh, create and upload a new build to the AppStore"
   lane :release do
-    #get_push_certificate                                        # will ensure the certificate is valid for at least another 2 weeks, and create a new one if it isn't
     increment_build_number(xcodeproj: "Memorize21.xcodeproj")
-    #capture_screenshots                                        # generate new screenshots for the App Store
     changelog = prompt(
       text: "Changelog: ",
       multi_line_end_keyword: "END"
     )
-    get_certificates                                            # invokes cert
-    get_provisioning_profile                                    # invokes sigh
+    get_certificates                                            # invokes fastlane cert (https://docs.fastlane.tools/actions/get_certificates/)
+    get_provisioning_profile                                    # invokes fastlane sigh (https://docs.fastlane.tools/actions/get_provisioning_profile/)
     sync_code_signing(type: "appstore")                         # see code signing guide for more information
     build_app(scheme: "Memorize21")
     upload_to_app_store                                         # upload your app to App Store Connect
     #slack(message: "Successfully uploaded a new App Store build")
   end
 end
+
+# Things I might add in the future:
+# https://docs.fastlane.tools/actions/get_push_certificate/
+#get_push_certificate                                           # will ensure the certificate is valid for at least another 2 weeks, and create a new one if it isn't
+# https://docs.fastlane.tools/actions/capture_screenshots/
+#capture_screenshots                                            # generate new screenshots for the App Store
