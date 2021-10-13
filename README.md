@@ -20,7 +20,7 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 If you have the time to look at my code, you will notice an unusual amount of additional code comments which I have put along the lines. These comments are for my own learning and documentation purposes and probably would not appear in such a way in production code.
 
 ## App Store
-This App is available on the [App Store](https://www.apple.com/app-store/), ready and free to be installed on your personal iPhone or iPad 😉
+This App is available on the [App Store](https://apps.apple.com/app/memorize21/id1587918694), ready and free to be installed on your personal iPhone or iPad 😉
 
 ## Beta Testing using TestFlight
 Past and upcoming beta versions of my App are available for Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
@@ -121,6 +121,8 @@ Text("Hello World")
     - [How to create an explicit animation](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-an-explicit-animation)
     - [Implicit and explicit animations](https://sirkif.hashnode.dev/explore-animation-in-swiftui-part-1)
     - [Basic Animations and Transitions](https://www.appcoda.com/learnswiftui/swiftui-animation.html)
+### Bindings
+- [Reactive Programming with Bindings](https://learnappmaking.com/binding-swiftui-how-to/)
 ### Text and Images
 - [How to insert images into text](https://www.hackingwithswift.com/quick-start/swiftui/how-to-insert-images-into-text)
 ### Tools
@@ -134,3 +136,11 @@ Text("Hello World")
 ### Versioning
 - [Intro to Semantic Versioning](https://www.geeksforgeeks.org/introduction-semantic-versioning/)
 - [Semantic Versioning 2.0.0](https://semver.org/)
+### Fastlane
+The fastest steps which I took to setup fastlane for this project were the following:
+1. Install fastlane: ```brew install fastlane```
+2. In the project directory: ``fastlane init``` and follow the instructions
+(Don't use 'fastlane init swift' yet, as it is still in beta and just creates a mess at the moment.
+See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
+3. Have a look at my [Ruby file](Memorize21/fastlane/Fasfile)
+4. Create an App specific password in your Apple account: https://appleid.apple.com/account/manage -> Security
