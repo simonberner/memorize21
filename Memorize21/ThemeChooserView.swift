@@ -18,6 +18,7 @@ struct ThemeChooserView: View {
                     HStack {
                         Text("Select a theme:")
                             .font(.headline)
+                            .foregroundColor(.black)
                         Button(action: {
                             isShowing = false
                         }, label: {
@@ -47,9 +48,11 @@ struct ThemeChooserView: View {
                                     Text(getThemeInfo(theme))
                                 }
                             })
+                                .cornerRadius(12)
                                 .tag(theme.name) // Identifies the button in the List for selection
                                 .listRowBackground(theme.color)
                         }
+                        .cornerRadius(12)
                         .foregroundColor(.black)
                         .padding()
 //                    }
@@ -75,6 +78,9 @@ struct ThemeChooser_Previews: PreviewProvider {
 
     static var previews: some View {
         ThemeChooserView(isShowing: $isShowing, chosenTheme: $chosenTheme)
+            .preferredColorScheme(.dark)
+        ThemeChooserView(isShowing: $isShowing, chosenTheme: $chosenTheme)
+            .preferredColorScheme(.light)
     }
 }
 
