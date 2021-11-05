@@ -6,7 +6,7 @@ Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and run
 ![Memorize21](Memorize21/memorize21.png)
 
 ## Tech Stack
-- [Xcode 13.0](https://developer.apple.com/xcode/)
+- [Xcode 13.1](https://developer.apple.com/xcode/)
 - [Swift 5.5](https://swift.org/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
@@ -23,12 +23,13 @@ If you have the time to look at my code, you will notice an unusual amount of ad
 This App is available on the [App Store](https://apps.apple.com/app/memorize21/id1587918694), ready and free to be installed on your personal iPhone or iPad 😉
 
 ## Beta Testing using TestFlight
-Past and upcoming beta versions of my App are available for Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) and I will send you an invite 🙂
+Past and upcoming beta versions of my App are available for Testing on [TestFlight](https://testflight.apple.com/)! DM me on [Twitter](https://twitter.com/simonbernerdev) if you want to test an upcoming release and I will send you an invite.
 
 ## Feature Requests & Bugs
 Feature Request and Bugs can be reported by opening a [new issue](https://github.com/simonberner/memorize21/issues). I might have a look at them 😁
 
-## Learnings
+## Learning Journey
+I am reflecting my whole iOS Development learning journey in one giant XMind MindMap. Rather than day by day journal entries, you will find all the different topics I have faced on my way so far. You will find the MindMap in this repo 😉
 ### SwiftUI
 - [Kickstart](https://matteomanferdini.com/swiftui/)
 ### MVVM
@@ -121,10 +122,15 @@ Text("Hello World")
     - [How to create an explicit animation](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-an-explicit-animation)
     - [Implicit and explicit animations](https://sirkif.hashnode.dev/explore-animation-in-swiftui-part-1)
     - [Basic Animations and Transitions](https://www.appcoda.com/learnswiftui/swiftui-animation.html)
-### Bindings
+### Property Observers
+- [Property observers in Swift](https://www.hackingwithswift.com/sixty/7/3/property-observers)
+### @State and @Binding
+- [SwiftUI: “@State” and “@Binding”](https://medium.com/if-let-swift-programming/swiftui-state-and-binding-5d45ed33f323)
 - [Reactive Programming with Bindings](https://learnappmaking.com/binding-swiftui-how-to/)
 ### Text and Images
 - [How to insert images into text](https://www.hackingwithswift.com/quick-start/swiftui/how-to-insert-images-into-text)
+### NavigationView
+- [The Complete Guide to NavigationView in SwiftUI](https://www.hackingwithswift.com/articles/216/complete-guide-to-navigationview-in-swiftui)
 ### Tools
 - [Integrate SwiftLint into your Xcode project](https://github.com/realm/SwiftLint#xcode)
     - [Docs](https://realm.github.io/SwiftLint/)
@@ -144,3 +150,6 @@ The fastest steps which I took to setup fastlane for this project were the follo
 See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
 3. Have a look at my [Ruby file](Memorize21/fastlane/Fasfile)
 4. Create an App specific password in your Apple account: https://appleid.apple.com/account/manage -> Security
+5. Run lanes with e.g: ```fastlane beta```
+#### Troubleshooting
+- In case that you run out of 'Distribution' certificates, check the Certificates section in your Apple Developer account and delete unused certificates.
