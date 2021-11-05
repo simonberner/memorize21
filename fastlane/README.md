@@ -30,7 +30,7 @@ Create cert and sigh
 ```
 fastlane ios release
 ```
-Create and push a new build to the AppStore
+Cert, sigh, create and upload a new build to the AppStore
 
 ----
 

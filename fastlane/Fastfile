@@ -33,11 +33,11 @@ platform :ios do
   # https://docs.fastlane.tools/codesigning/getting-started/#using-cert-and-sigh
   desc "Create cert and sigh"
   lane :get_dev_certs do
-    # fastlane cert: to generate a certificate with the AppleID
+    # fastlane cert: generate with the AppleID a valid certificate and its private key on the local machine
     cert(
       development: true
     )
-    # fastlane sigh: to create a provisioning profile
+    # fastlane sigh: create a valid provisioning profile locally that matches the above certificate
     sigh(
       development: true
     )
