@@ -22,11 +22,12 @@ struct EmojiMemoryGameView: View {
                 HStack {
                     newGameButton
                     Spacer()
-                    infoButton
+                    themeChooserButton
                 }
                 .padding(.horizontal)
             }
             deckBody
+            themeChooserView
             infoView
         }
     }
@@ -66,6 +67,8 @@ struct EmojiMemoryGameView: View {
                 .font(.title2)
             Spacer()
             Text("Score: \(gameViewModel.score)")
+            Spacer()
+            infoButton
         }
         .padding(.horizontal)
     }
@@ -96,7 +99,7 @@ struct EmojiMemoryGameView: View {
         .padding(.horizontal)
     }
 
-    var deckBody: some View {
+    private var deckBody: some View {
         ZStack {
             // ForEach is another way to see views appearing and disappearing
             ForEach(gameViewModel.cards.filter(isUndealt)) { card in
@@ -131,7 +134,7 @@ struct EmojiMemoryGameView: View {
             // in the ui
             withAnimation {
                 dealt = [] // resetting it to empty causes animation to happen
-                gameViewModel.startNewGame()
+                gameViewModel.startNewGame(chosenTheme)
             }
         }, label: {
             HStack {
@@ -164,9 +167,25 @@ struct EmojiMemoryGameView: View {
         Button(action: {
             showInfoView = true
         }, label: {
-            HStack {
-                Image(systemName: "info.circle")
-            }
+            Image(systemName: "info.circle")
+        })
+    }
+
+    private var themeChooserView: some View {
+        ThemeChooserView(isShowing: $showThemeChooser, chosenTheme: $chosenTheme)
+            .animation(.easeInOut(duration: 1), value: showThemeChooser)
+            .transition(.asymmetric(insertion: .slide, removal: .slide))
+    }
+
+    @State private var showThemeChooser = false
+    @State private var chosenTheme: EmojiThemeModel?
+
+    private var themeChooserButton: some View {
+        Button(action: {
+            showThemeChooser = true
+        }, label: {
+            Image(systemName: "star.circle")
+            Text("Themes")
         })
     }
 

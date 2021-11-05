@@ -7,42 +7,13 @@ import SwiftUI
 // instance or var of a class, can change it!)
 class EmojiMemoryGameViewModel: ObservableObject {
     typealias Card = MemoryGameModel<String>.Card
+    private var emojiThemeViewModel = EmojiThemeViewModel()
 
     init() {
-        emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
+        emojiThemeModel = emojiThemeViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
         emojiThemeModel.emojis.shuffle() // Assignment2 - Task5
         model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
     }
-
-    private static var emojiThemeModels: [EmojiThemeModel] = [
-        EmojiThemeModel(name: "Animals",
-                   emojis: ["🐍", "🐈", "🐇", "🦖", "🪲", "🐬", "🦒", "🦢", "🐿", "🦔", "🐘", "🦧"],
-                   randomNumberOfPairsOfCards: true,
-                   color: "green"),
-        EmojiThemeModel(name: "Smileys",
-                   emojis: ["😀", "☺️", "☹️", "🤬", "🥶", "😴", "🥱", "😢", "🥳", "🤩", "🥰", "😷"],
-                   color: "blue"),
-        EmojiThemeModel(name: "Objects",
-                   emojis: ["🕯", "🪚", "🎁", "🛀🏾", "✂️", "🪄", "🎱", "🔓", "🧲", "💰", "🧯", "📡"],
-                   numberOfPairsOfCards: 12,
-                   color: "pink"),
-        EmojiThemeModel(name: "Flags",
-                   emojis: ["🇯🇵", "🇦🇴", "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "🇪🇷", "🇲🇶", "🇪🇸", "🇿🇦", "🇪🇺", "🇧🇷", "🇹🇿", "🇩🇰", "🇨🇦"],
-                   numberOfPairsOfCards: 12,
-                   color: "yellow"),
-        EmojiThemeModel(name: "Sport",
-                   emojis: ["🏄🏾‍♀️", "🪂", "🤸🏿‍♂️", "🧘🏽‍♂️", "🧗🏽‍♂️", "🤺", "🤾🏽‍♂️", "🏌🏽‍♀️", "🤽🏽‍♀️", "🚴🏽‍♀️", "🚣🏽", "🏇🏾"],
-                   randomNumberOfPairsOfCards: true,
-                   color: "purple"),
-        EmojiThemeModel(name: "Vehicles",
-                   emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
-                   numberOfPairsOfCards: 12,
-                   color: "red"),
-        EmojiThemeModel(name: "Halloween",
-                   emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
-                   numberOfPairsOfCards: 10,
-                   color: "orange")
-    ]
 
     // this is a type function because it is static and belongs to the class (global scope) and not an instance of it
     private static func createMemoryGame(emojiThemeModel: EmojiThemeModel) -> MemoryGameModel<String> {
@@ -71,41 +42,24 @@ class EmojiMemoryGameViewModel: ObservableObject {
     }
 
     var emojiThemeColor: Color {
-        switch emojiThemeModel.color {
-        case "green":
-            return .green
-        case "blue":
-            return .blue
-        case "pink":
-            return .pink
-        case "yellow":
-            return .yellow
-        case "purple":
-            return .purple
-        case "red":
-            return .red
-        case "orange":
-            return .orange
-        default:
-            return .black
-        }
+        return emojiThemeModel.color
     }
 
     var emojiThemeColorGradient: Gradient {
         switch emojiThemeModel.color {
-        case "green":
+        case .green:
             return Gradient(colors: [.green, .white])
-        case "blue":
+        case .blue:
             return Gradient(colors: [.blue, .white])
-        case "pink":
+        case .pink:
             return Gradient(colors: [.pink, .white])
-        case "yellow":
+        case .yellow:
             return Gradient(colors: [.yellow, .white])
-        case "purple":
+        case .purple:
             return Gradient(colors: [.purple, .white])
-        case "red":
+        case .red:
             return Gradient(colors: [.red, .white])
-        case "orange":
+        case .orange:
             return Gradient(colors: [.orange, .white])
         default:
             return Gradient(colors: [.black, .white])
@@ -122,9 +76,8 @@ class EmojiMemoryGameViewModel: ObservableObject {
         model.choose(card)
     }
 
-    func startNewGame() {
-        emojiThemeModel = EmojiMemoryGameViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
-        emojiThemeModel.emojis.shuffle() // Assignment2 - Task11
+    func startNewGame(_ theme: EmojiThemeModel?) {
+        emojiThemeModel = emojiThemeViewModel.getEmojiThemeModel(theme)
         model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
     }
 

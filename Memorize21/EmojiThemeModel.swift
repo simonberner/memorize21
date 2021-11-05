@@ -1,13 +1,14 @@
 import Foundation
+import SwiftUI
 
-// Assignment2 - Task3
-struct EmojiThemeModel {
+struct EmojiThemeModel: Identifiable {
+    let id = UUID()
     var name: String
     var emojis: [String]
     var numberOfPairsOfCards: Int
-    var color: String
+    var color: Color
 
-    init(name: String, emojis: [String], numberOfPairsOfCards: Int, color: String) {
+    init(name: String, emojis: [String], numberOfPairsOfCards: Int, color: Color) {
         self.name = name
         self.emojis = emojis
         self.numberOfPairsOfCards = numberOfPairsOfCards > emojis.count ? emojis.count : numberOfPairsOfCards // Assignment2 - Task7
@@ -16,7 +17,7 @@ struct EmojiThemeModel {
 
     // Assignment2 - ExtraCredit2
     // Random number of cards
-    init(name: String, emojis: [String], randomNumberOfPairsOfCards: Bool, color: String) {
+    init(name: String, emojis: [String], randomNumberOfPairsOfCards: Bool, color: Color) {
         self.name = name
         self.emojis = emojis
         self.numberOfPairsOfCards = randomNumberOfPairsOfCards ? Int.random(in: 2...emojis.count) : emojis.count // ternary operator
@@ -24,7 +25,7 @@ struct EmojiThemeModel {
     }
 
     // Assignment2 - ExtraCredit1
-    init(name: String, emojis: [String], color: String) {
+    init(name: String, emojis: [String], color: Color) {
         self.name = name
         self.emojis = emojis
         self.numberOfPairsOfCards = emojis.count
