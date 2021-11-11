@@ -34,17 +34,38 @@ class EmojiThemeViewModel: ObservableObject {
                         color: .orange)
     ]
 
-    func getEmojiThemeModel(_ theme: EmojiThemeModel?) -> EmojiThemeModel {
+    func getEmojiThemeModel(_ themeName: String?) -> EmojiThemeModel {
         var emojiThemeModel: EmojiThemeModel
 
-        if theme == nil {
+        if themeName == nil {
             emojiThemeModel = emojiThemeModels.randomElement()!
         } else {
-            emojiThemeModel = theme!
+            emojiThemeModel = emojiThemeModels[getEmojiThemeModelByName(themeName)]
         }
         emojiThemeModel.emojis.shuffle()
 
         return emojiThemeModel
+    }
+
+    private func getEmojiThemeModelByName(_ themeName: String?) -> Int {
+        switch themeName {
+        case "Animals" :
+            return 0
+        case "Smileys" :
+            return 1
+        case "Objects" :
+            return 2
+        case "Flags" :
+            return 3
+        case "Sport" :
+            return 4
+        case "Vehicles" :
+            return 5
+        case "Halloween" :
+            return 6
+        default :
+            return 0
+        }
     }
 
 }

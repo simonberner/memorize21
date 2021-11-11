@@ -22,12 +22,10 @@ struct EmojiMemoryGameView: View {
                 HStack {
                     newGameButton
                     Spacer()
-                    themeChooserButton
                 }
                 .padding(.horizontal)
             }
             deckBody
-            themeChooserView
             infoView
         }
     }
@@ -134,7 +132,7 @@ struct EmojiMemoryGameView: View {
             // in the ui
             withAnimation {
                 dealt = [] // resetting it to empty causes animation to happen
-                gameViewModel.startNewGame(chosenTheme)
+                gameViewModel.startNewGame()
             }
         }, label: {
             HStack {
@@ -168,24 +166,6 @@ struct EmojiMemoryGameView: View {
             showInfoView = true
         }, label: {
             Image(systemName: "info.circle")
-        })
-    }
-
-    private var themeChooserView: some View {
-        ThemeChooserView(isShowing: $showThemeChooser, chosenTheme: $chosenTheme)
-            .animation(.easeInOut(duration: 1), value: showThemeChooser)
-            .transition(.asymmetric(insertion: .slide, removal: .slide))
-    }
-
-    @State private var showThemeChooser = false
-    @State private var chosenTheme: EmojiThemeModel?
-
-    private var themeChooserButton: some View {
-        Button(action: {
-            showThemeChooser = true
-        }, label: {
-            Image(systemName: "star.circle")
-            Text("Themes")
         })
     }
 
@@ -273,10 +253,10 @@ struct CardView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var theme: String?
+
     static var previews: some View {
-        let gameViewModel = EmojiMemoryGameViewModel()
-//        gameViewModel.choose(gameViewModel.cards.first!)
-//        return EmojiMemoryGameView(gameViewModel: gameViewModel)
+        let gameViewModel = EmojiMemoryGameViewModel(selectedTheme: theme)
         EmojiMemoryGameView(gameViewModel: gameViewModel)
             .preferredColorScheme(.dark)
         EmojiMemoryGameView(gameViewModel: gameViewModel)

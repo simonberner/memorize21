@@ -9,11 +9,19 @@ import SwiftUI
 
 @main
 struct Memorize21App: App {
-    private let gameViewModel = EmojiMemoryGameViewModel()
+//    private let gameViewModel = EmojiMemoryGameViewModel()
+    @State private var isShowing = true
 
     var body: some Scene {
         WindowGroup {
-            EmojiMemoryGameView(gameViewModel: gameViewModel)
+            ThemeChooserView(isShowing: $isShowing)
+                .onAppear(perform: {
+                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                })
+            //            EmojiMemoryGameView(gameViewModel: gameViewModel)
+            //                .onAppear(perform: {
+            //                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+            //                })
         }
     }
 }
