@@ -97,6 +97,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		159E2DA42761FA2E00AAD829 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */,
+				15AB7A5B26CC4DDE00A83FA6 /* EmojiThemeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		159E2DA52761FA7B00AAD829 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		159E2DA62761FB0B00AAD829 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				158410E626E65E7400C860BB /* AspectVGrid.swift */,
+				156B840D26EE2F9D007E213F /* Cardify.swift */,
+				15C8344C272EA1C700AA6718 /* DealtCards.swift */,
+				150EAA1726EA966600BFEA51 /* Pie.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		159E2DA72761FBEC00AAD829 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				15F1366C272073090047FC4C /* ThemeChooserView.swift */,
+				153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */,
+				15DD7BFB26BEAFEC0063AB00 /* EmojiMemoryGameView.swift */,
+				1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */,
+				159E1B8F2708AC2B0030D8DC /* InfoView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		15DD7BED26BEAFEB0063AB00 = {
 			isa = PBXGroup;
 			children = (
@@ -123,22 +163,14 @@
 		15DD7BF826BEAFEC0063AB00 /* Memorize21 */ = {
 			isa = PBXGroup;
 			children = (
+				159E2DA72761FBEC00AAD829 /* Screens */,
+				159E2DA62761FB0B00AAD829 /* Utilities */,
+				159E2DA52761FA7B00AAD829 /* Extensions */,
+				159E2DA42761FA2E00AAD829 /* Model */,
 				15DD7BF926BEAFEC0063AB00 /* Memorize21App.swift */,
-				15DD7BFB26BEAFEC0063AB00 /* EmojiMemoryGameView.swift */,
-				1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */,
-				1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */,
 				15DD7BFD26BEAFEC0063AB00 /* Assets.xcassets */,
 				15DD7C0226BEAFEC0063AB00 /* Info.plist */,
 				15DD7BFF26BEAFEC0063AB00 /* Preview Content */,
-				153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */,
-				15AB7A5B26CC4DDE00A83FA6 /* EmojiThemeModel.swift */,
-				158410E626E65E7400C860BB /* AspectVGrid.swift */,
-				150EAA1726EA966600BFEA51 /* Pie.swift */,
-				156B840D26EE2F9D007E213F /* Cardify.swift */,
-				159E1B8F2708AC2B0030D8DC /* InfoView.swift */,
-				152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */,
-				15F1366C272073090047FC4C /* ThemeChooserView.swift */,
-				15C8344C272EA1C700AA6718 /* DealtCards.swift */,
 			);
 			path = Memorize21;
 			sourceTree = "<group>";
