@@ -1,12 +1,16 @@
 # Memorize21
 
 This is a work in progress learning project for my personal endeavours of becoming an iOS Developer one day.
-Memorize is a [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and runs on iOS and iPadOS (version >=14).
+Memorize is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game).
 
+## Compatibility
+This App runs on iOS (incl. iPadOS) >= 15.0
+
+## Screens
 ![Memorize21](Memorize21/memorize21.png)
 
 ## Tech Stack
-- [Xcode 13.1](https://developer.apple.com/xcode/)
+- [Xcode 13.2.1](https://developer.apple.com/xcode/)
 - [Swift 5.5](https://swift.org/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
