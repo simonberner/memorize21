@@ -224,7 +224,8 @@ struct CardView: View {
                 // implicit animation which only animates the view modifier above
                 // so the placement of implicit animation modifiers is important
                 // this animation animates the change of the above var card.isMatched
-                    .animation(.linear(duration: 1).repeatForever(autoreverses: false))
+                    .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: card.isMatched)
+
                 // fixed font size which does not have to animate
                     .font(Font.system(size: DrawingConstants.fontSize))
                     .scaleEffect(scale(thatFits: geometry.size))
