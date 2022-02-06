@@ -1,10 +1,9 @@
 # Memorize21
 
-This is a work in progress learning project for my personal endeavours of becoming an iOS Developer one day.
-Memorize is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game).
+Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and is my very first iOS Development learning project.
 
 ## Compatibility
-This App runs on iOS (incl. iPadOS) >= 15.0
+This App runs on iOS (incl. iPadOS) >= 15.2
 
 ## Screens
 ![Memorize21](Memorize21/memorize21.png)
