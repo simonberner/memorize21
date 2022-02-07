@@ -25,6 +25,7 @@
 		15DD7C0C26BEAFED0063AB00 /* Memorize21Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD7C0B26BEAFED0063AB00 /* Memorize21Tests.swift */; };
 		15DD7C1726BEAFED0063AB00 /* Memorize21UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD7C1626BEAFED0063AB00 /* Memorize21UITests.swift */; };
 		15F1366D272073090047FC4C /* ThemeChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1366C272073090047FC4C /* ThemeChooserView.swift */; };
+		15F2C60D27B064270004D5D3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C60C27B064270004D5D3 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		15DD7C1826BEAFED0063AB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E52D89270EF266002A9B73 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		15F1366C272073090047FC4C /* ThemeChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChooserView.swift; sourceTree = "<group>"; };
+		15F2C60C27B064270004D5D3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +132,11 @@
 		159E2DA72761FBEC00AAD829 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				15F1366C272073090047FC4C /* ThemeChooserView.swift */,
-				153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */,
-				15DD7BFB26BEAFEC0063AB00 /* EmojiMemoryGameView.swift */,
 				1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */,
-				159E1B8F2708AC2B0030D8DC /* InfoView.swift */,
-				15B4ADB027AAD22D001508B9 /* ParticleSystemView.swift */,
+				15DD7BFB26BEAFEC0063AB00 /* EmojiMemoryGameView.swift */,
+				15F2C60B27B064140004D5D3 /* Views */,
+				15F2C60F27B068340004D5D3 /* Particle */,
+				15F2C60E27B068100004D5D3 /* Theme */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -202,6 +203,32 @@
 				15DD7C1826BEAFED0063AB00 /* Info.plist */,
 			);
 			path = Memorize21UITests;
+			sourceTree = "<group>";
+		};
+		15F2C60B27B064140004D5D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				159E1B8F2708AC2B0030D8DC /* InfoView.swift */,
+				15F2C60C27B064270004D5D3 /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		15F2C60E27B068100004D5D3 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */,
+				15F1366C272073090047FC4C /* ThemeChooserView.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		15F2C60F27B068340004D5D3 /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				15B4ADB027AAD22D001508B9 /* ParticleSystemView.swift */,
+			);
+			path = Particle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +385,7 @@
 				15AB7A5C26CC4DDE00A83FA6 /* EmojiThemeModel.swift in Sources */,
 				15F1366D272073090047FC4C /* ThemeChooserView.swift in Sources */,
 				15C8344D272EA1C700AA6718 /* DealtCards.swift in Sources */,
+				15F2C60D27B064270004D5D3 /* CardView.swift in Sources */,
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
 				156B840E26EE2F9D007E213F /* Cardify.swift in Sources */,
 				158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */,

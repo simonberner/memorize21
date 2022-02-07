@@ -10,31 +10,20 @@ import SwiftUI
 struct ParticleSystemView: View {
     var body: some View {
         ZStack {
-            EmitterView(image: "confetti",
-                        particleCount: 50,
+            EmitterView(image: "ballon",
+                        particleCount: 100,
                         creationPoint: .init(x: 0.5, y: -0.1),
                         creationRange: CGSize(width: 1, height: 0),
                         colors: [.red, .yellow, .blue, .green, .white, .orange, .purple],
                         angle: Angle(degrees: 180),
-                        angleRange: Angle(radians: .pi / 4),
-                        rotationRange: Angle(radians: .pi * 2),
-                        rotationSpeed: Angle(radians: .pi),
-                        scale: 0.6,
+                        angleRange: Angle(degrees: 10),
+                        opacityRange: 1,
+                        scale: 0.4,
+                        scaleRange: 0.4,
                         speed: 1200,
-                        speedRange: 800,
+                        speedRange: 1200,
                         animation: Animation.linear(duration: 5).repeatForever(autoreverses: false),
                         animationDelayThreshold: 5)
-//            EmitterView(image: "spark",
-//                        particleCount: 200,
-//                        colors: [.red],
-//                        blendMode: .screen,
-//                        angleRange: .degrees(360),
-//                        opacitySpeed: -1,
-//                        scale: 0.4,
-//                        scaleRange: 0.1,
-//                        scaleSpeed: 0.4,
-//                        speedRange: 80,
-//                        animation: Animation.easeOut(duration: 1.5).repeatForever(autoreverses: false))
         }
         .background(Color.black)
         .ignoresSafeArea(.all)
