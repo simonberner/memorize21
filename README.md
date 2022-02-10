@@ -134,6 +134,10 @@ Text("Hello World")
 - [How to insert images into text](https://www.hackingwithswift.com/quick-start/swiftui/how-to-insert-images-into-text)
 ### NavigationView
 - [The Complete Guide to NavigationView in SwiftUI](https://www.hackingwithswift.com/articles/216/complete-guide-to-navigationview-in-swiftui)
+### Fonts
+- The system default font of a Text is: San Francisco
+- Have a look at [Google Fonts](https://fonts.google.com/) for choosing your custom fonts
+- For adding custom fonts in SwiftUI have a look at: [How to add custom fonts in SwiftUI](https://betterprogramming.pub/custom-fonts-in-swiftui-d529de69131d)
 ### Tools
 - [Integrate SwiftLint into your Xcode project](https://github.com/realm/SwiftLint#xcode)
     - [Docs](https://realm.github.io/SwiftLint/)
