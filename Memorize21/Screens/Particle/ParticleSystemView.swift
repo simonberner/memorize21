@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ParticleSystemView: View {
+
+    let font = Font.custom(FontNameManager.luckiestGuy, size: 38)
+
     var body: some View {
         ZStack {
             EmitterView(image: "ballon",
@@ -26,7 +29,8 @@ struct ParticleSystemView: View {
                         animationDelayThreshold: 5)
 
             Text("Game Over")
-                .font(.title)
+                .font(font)
+                .foregroundColor(.pink)
                 .italic()
                 .animation(Animation.easeOut(duration: 2))
         }

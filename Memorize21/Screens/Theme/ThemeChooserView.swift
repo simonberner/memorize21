@@ -6,10 +6,12 @@ struct ThemeChooserView: View {
     @State private var selection: String?
     @State private var emojiThemeModels = EmojiThemeViewModel().emojiThemeModels
 
+    let headerFont = Font.custom(FontNameManager.permanentMarker, size: 40)
+
     var body: some View {
         VStack {
             Text("Memorize21")
-                .font(.title)
+                .font(headerFont)
                 .fontWeight(.heavy)
             NavigationView {
                 List(emojiThemeModels) { theme in

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		150EAA1826EA966600BFEA51 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150EAA1726EA966600BFEA51 /* Pie.swift */; };
 		152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */; };
+		152C435327B524A8009A470F /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */; };
+		152C435527B524C1009A470F /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152C435427B524C1009A470F /* LuckiestGuy-Regular.ttf */; };
+		152C435727B5280D009A470F /* FontNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C435627B5280D009A470F /* FontNameManager.swift */; };
 		1539EBBD26C45D0F000C2BD8 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */; };
 		1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */; };
 		153DD6F9272F178900F7D070 /* EmojiThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */; };
@@ -48,6 +51,9 @@
 /* Begin PBXFileReference section */
 		150EAA1726EA966600BFEA51 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameExtensions.swift; sourceTree = "<group>"; };
+		152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PermanentMarker-Regular.ttf"; sourceTree = "<group>"; };
+		152C435427B524C1009A470F /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		152C435627B5280D009A470F /* FontNameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNameManager.swift; sourceTree = "<group>"; };
 		1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
 		1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiThemeViewModel.swift; sourceTree = "<group>"; };
@@ -101,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152C435027B52422009A470F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */,
+				152C435427B524C1009A470F /* LuckiestGuy-Regular.ttf */,
+				152C435627B5280D009A470F /* FontNameManager.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		159E2DA42761FA2E00AAD829 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +183,7 @@
 		15DD7BF826BEAFEC0063AB00 /* Memorize21 */ = {
 			isa = PBXGroup;
 			children = (
+				152C435027B52422009A470F /* Fonts */,
 				159E2DA72761FBEC00AAD829 /* Screens */,
 				159E2DA62761FB0B00AAD829 /* Utilities */,
 				159E2DA52761FA7B00AAD829 /* Extensions */,
@@ -336,7 +353,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				15DD7C0126BEAFEC0063AB00 /* Preview Assets.xcassets in Resources */,
+				152C435327B524A8009A470F /* PermanentMarker-Regular.ttf in Resources */,
 				15DD7BFE26BEAFEC0063AB00 /* Assets.xcassets in Resources */,
+				152C435527B524C1009A470F /* LuckiestGuy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +403,7 @@
 				153DD6F9272F178900F7D070 /* EmojiThemeViewModel.swift in Sources */,
 				15AB7A5C26CC4DDE00A83FA6 /* EmojiThemeModel.swift in Sources */,
 				15F1366D272073090047FC4C /* ThemeChooserView.swift in Sources */,
+				152C435727B5280D009A470F /* FontNameManager.swift in Sources */,
 				15C8344D272EA1C700AA6718 /* DealtCards.swift in Sources */,
 				15F2C60D27B064270004D5D3 /* CardView.swift in Sources */,
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
