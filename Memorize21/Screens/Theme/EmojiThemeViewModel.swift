@@ -7,7 +7,7 @@ class EmojiThemeViewModel: ObservableObject {
     private(set) var emojiThemeModels: [EmojiThemeModel] = [
         EmojiThemeModel(name: "Animals",
                         emojis: ["🐍", "🐈", "🐇", "🦖", "🪲", "🐬", "🦒", "🦢", "🐿", "🦔", "🐘", "🦧"],
-                        randomNumberOfPairsOfCards: true,
+                        numberOfPairsOfCards: 5,
                         color: .green),
         EmojiThemeModel(name: "Smileys",
                         emojis: ["😀", "☺️", "☹️", "🤬", "🥶", "😴", "🥱", "😢", "🥳", "🤩", "🥰", "😷"],
@@ -22,7 +22,7 @@ class EmojiThemeViewModel: ObservableObject {
                         color: .yellow),
         EmojiThemeModel(name: "Sport",
                         emojis: ["🏄🏾‍♀️", "🪂", "🤸🏿‍♂️", "🧘🏽‍♂️", "🧗🏽‍♂️", "🤺", "🤾🏽‍♂️", "🏌🏽‍♀️", "🤽🏽‍♀️", "🚴🏽‍♀️", "🚣🏽", "🏇🏾"],
-                        randomNumberOfPairsOfCards: true,
+                        numberOfPairsOfCards: 6,
                         color: .purple),
         EmojiThemeModel(name: "Vehicles",
                         emojis: ["✈️", "🚜", "🚂", "🏎", "🛵", "🚀", "🚁", "⛵️", "🚠", "🦽", "🛶", "🚔"],
