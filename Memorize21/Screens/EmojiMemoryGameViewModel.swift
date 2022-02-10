@@ -29,13 +29,14 @@ class EmojiMemoryGameViewModel: ObservableObject {
     // access control - private(set): other structs/classes can look at the model, but can't change it
     // Swift detects changes in structs, that is why the model is a struct
     @Published private var model: MemoryGameModel<String>
+    @Published var showParticleSystemView = false
 
     private var emojiThemeModel: EmojiThemeModel
 
     // to make the model fully private and make it available:
     // this is completely read only
     // var who's value is calculated by a function (return model.cards)
-    // as an array is a struct, this the function returns a fresh copy of model.cards each time
+    // as an array is a struct, this returns a fresh copy of model.cards each time
     var cards: [Card] {
         return model.cards
     }
@@ -77,6 +78,10 @@ class EmojiMemoryGameViewModel: ObservableObject {
 
     func choose(_ card: Card) {
         model.choose(card)
+
+        if model.remainingUnmatchedCards == 0 {
+            showParticleSystemView = true
+        }
     }
 
     func startNewGame() {

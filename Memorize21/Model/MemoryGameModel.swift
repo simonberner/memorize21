@@ -1,7 +1,7 @@
 // Fondation contains: String, Array, Dictionary etc.
 import Foundation
 
-// This is a Model of MVVM
+// This is the Model of MVVM
 // CardContent behaves like an Equatable
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     // private(set): the EmojiMemoryGameViewModel shall not be able to change the cards
@@ -12,6 +12,8 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     private var startDateOfFirstChosenCard: Date?
 
     private(set) var score = 0
+
+    private(set) var remainingUnmatchedCards: Int?
 
     // the external name of the argument is blank _
     // the internal name of the argument is then card
@@ -33,6 +35,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    remainingUnmatchedCards! -= 2
                 }
                 // calculate the score when two cards are chosen
                 calculateScore(firstCard: cards[chosenIndex], secondCard: cards[potentialMatchIndex], startDate: startDateOfFirstChosenCard!)
@@ -91,7 +94,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         }
     }
 
-    // free init gets lost with this init
+    // free member-wise init gets lost with this init
     // second argument must be a function with an argument (Int) pairIndex which returns a something of type CardContent
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
         cards = [] // Swift can infer the type here from the above declaration
@@ -100,9 +103,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             let content = createCardContent(pairIndex)
             cards.append(Card( content: content, id: pairIndex*2))
             cards.append(Card( content: content, id: pairIndex*2+1))
-
         }
         cards.shuffle() // Assignment2 - Task13
+        remainingUnmatchedCards = cards.count
     }
 
     // MARK: - Declaration of the Card (MemoryGameModel.Card)

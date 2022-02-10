@@ -34,13 +34,11 @@ struct ThemeChooserView: View {
 }
 
 struct ThemeChooser_Previews: PreviewProvider {
-    @State static var isShowing = true
-    @State static var chosenTheme: String?
 
     static var previews: some View {
-        ThemeChooserView(isShowing: $isShowing)
+        ThemeChooserView(isShowing: .constant(true))
             .preferredColorScheme(.dark)
-        ThemeChooserView(isShowing: $isShowing)
+        ThemeChooserView(isShowing: .constant(true))
             .preferredColorScheme(.light)
     }
 }

@@ -27,6 +27,9 @@ struct EmojiMemoryGameView: View {
             }
             deckBody
             infoView
+            if gameViewModel.showParticleSystemView {
+                ParticleSystemView()
+            }
         }
     }
 
@@ -126,6 +129,7 @@ struct EmojiMemoryGameView: View {
 
     private var newGameButton: some View {
         Button(action: {
+            gameViewModel.showParticleSystemView = false
             // all view modifiers which can be animated are being animated inclusive those from
             // the gameBody's AspectVGrid which are needed to position the cards
             // explicit animations are mostly used for 'user intent' functions to animate change

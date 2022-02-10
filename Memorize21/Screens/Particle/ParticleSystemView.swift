@@ -24,8 +24,12 @@ struct ParticleSystemView: View {
                         speedRange: 1200,
                         animation: Animation.linear(duration: 5).repeatForever(autoreverses: false),
                         animationDelayThreshold: 5)
+
+            Text("Game Over")
+                .font(.title)
+                .italic()
+                .animation(Animation.easeOut(duration: 2))
         }
-        .background(Color.black)
         .ignoresSafeArea(.all)
     }
 }
