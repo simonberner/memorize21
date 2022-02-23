@@ -7,6 +7,7 @@ This App runs on iOS (incl. iPadOS) >= 15.2
 
 ## Screens
 ![Memorize21](Memorize21/memorize21.png)
+![Memorize21](Memorize21/memorize21-go.gif)
 
 ## Tech Stack
 - [Xcode 13.2.1](https://developer.apple.com/xcode/)
