@@ -2,6 +2,15 @@
 
 Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and is my very first iOS Development learning project.
 
+<p align="center">
+    <img src="https://img.shields.io/badge/iOS-15.2+-blue.svg" />
+    <img src="https://img.shields.io/badge/Swift-5.5-brightgreen.svg" />
+    <a href="https://twitter.com/simonbernerdev">
+        <img src="https://img.shields.io/badge/Contact-@simonbernerdev-orange" alt="Twitter: @simonbernerdev" />
+    </a>
+</p>
+
+
 ## Compatibility
 This App runs on iOS (incl. iPadOS) >= 15.2
 
