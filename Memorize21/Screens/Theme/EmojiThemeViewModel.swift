@@ -49,21 +49,21 @@ class EmojiThemeViewModel: ObservableObject {
 
     private func getEmojiThemeModelByName(_ themeName: String?) -> Int {
         switch themeName {
-        case "Animals" :
+        case "Animals":
             return 0
-        case "Smileys" :
+        case "Smileys":
             return 1
-        case "Objects" :
+        case "Objects":
             return 2
-        case "Flags" :
+        case "Flags":
             return 3
-        case "Sport" :
+        case "Sport":
             return 4
-        case "Vehicles" :
+        case "Vehicles":
             return 5
-        case "Halloween" :
+        case "Halloween":
             return 6
-        default :
+        default:
             return 0
         }
     }
