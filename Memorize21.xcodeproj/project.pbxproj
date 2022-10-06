@@ -110,8 +110,8 @@
 		152C435027B52422009A470F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */,
 				152C435427B524C1009A470F /* LuckiestGuy-Regular.ttf */,
+				152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */,
 				152C435627B5280D009A470F /* FontNameManager.swift */,
 			);
 			path = Fonts;
