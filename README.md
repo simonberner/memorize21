@@ -3,30 +3,66 @@
 Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and is my very first iOS Development learning project.
 
 <p align="center">
-    <img src="https://img.shields.io/badge/iOS-15.2+-blue.svg" />
-    <img src="https://img.shields.io/badge/Swift-5.5-brightgreen.svg" />
-    <a href="https://twitter.com/simonbernerdev">
-        <img src="https://img.shields.io/badge/Contact-@simonbernerdev-orange" alt="Twitter: @simonbernerdev" />
+    <a href="https://en.wikipedia.org/wiki/IOS">
+        <img src="https://img.shields.io/badge/iOS-15.2+-blue.svg?style=for-the-badge" />
+    </a>
+    <a href="https://en.wikipedia.org/wiki/IPadOS">
+        <img src="https://img.shields.io/badge/iPadOS-15.2+-blue.svg?style=for-the-badge" />
+    </a>
+    <a href="https://www.swift.org/">
+        <img src="https://img.shields.io/badge/Swift-5.7.2-brightgreen.svg?style=for-the-badge&logo=swift" />
+    </a>
+    <a href="https://developer.apple.com/xcode/swiftui">
+        <img src="https://img.shields.io/badge/SwiftUI-blue.svg?style=for-the-badge&logo=swift&logoColor=black" />
+    </a>
+    <a href="https://developer.apple.com/xcode">
+        <img src="https://img.shields.io/badge/Xcode-14.2-blue.svg?style=for-the-badge" />
+    </a>
+    <a href="https://mastodon.green/@simonberner">
+        <img src="https://img.shields.io/badge/Contact-@simonberner-orange?style=for-the-badge" alt="mastodon.green/@simonberner" />
+    </a>
+    <a href="https://gitmoji.dev">
+        <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=for-the-badge" alt="Gitmoji">
+    </a>
+    <a href="https://github.com/conventional-commits/conventionalcommits.org">
+        <img src="https://img.shields.io/badge/Conventional%20Commits-📝-lightgrey.svg?style=for-the-badge" alt="Conventional Commits">
+    </a>
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/badge/license-MIT-black.svg?style=for-the-badge" />
     </a>
 </p>
 
+---
+
+## Contents
+* [Compatibility](#compatibility)
+* [Screens](#screens)
+* [Tech Stack](#tech-stack)
+* [Used Tools](#used-tools)
+* [Architectural Design Patterns](#architectural-design-pattern)
+* [Code comments](#code-comments)
+* [App Store](#app-store)
+* [Learning Journey](#learning-journey)
+
+---
 
 ## Compatibility
-This App runs on iOS (incl. iPadOS) >= 15.2
+- Current Version 2 of the App runs on iOS/iPadOS 15.2 up to 16.2.
+- Future Version 3 of the App will only run on iOS/iPadOS 16+
 
 ## Screens
 ![Memorize21](Memorize21/memorize21.png)
 ![Memorize21](Memorize21/memorize21-go.gif)
 
 ## Tech Stack
-- [Xcode 13.2.1](https://developer.apple.com/xcode/)
-- [Swift 5.5](https://swift.org/)
+- [Xcode 14.2](https://developer.apple.com/xcode/)
+- [Swift 5.7.2](https://swift.org/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
 ## Used Tools
 - [SwiftLint](https://github.com/realm/SwiftLint)
 
-## Architectural Design Patterns
+## Architectural Design Pattern
 - [MVVM](https://matteomanferdini.com/mvvm-pattern-ios-swift/)
 
 ## Code comments
@@ -156,6 +192,9 @@ Text("Hello World")
     - [SwiftLint for Swift Packages](https://blog.timac.org/2021/1003-swiftlint-for-swift-packages/)
 ### TestFlight
 - [Sean Allen: How to upload and distribute an App](https://www.youtube.com/watch?v=DLvdZtTAJrE)
+- [Are you an App Store developer who is tired of clicking through the "compliance" question every time you submit a build?](https://twitter.com/danielpunkass/status/1517507834778370049)
+- [Complying with Encryption Export Regulations](https://developer.apple.com/documentation/security/complying_with_encryption_export_regulations)
+- [Automating the encryption compliance check](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
 ### Versioning
 - [Intro to Semantic Versioning](https://www.geeksforgeeks.org/introduction-semantic-versioning/)
 - [Semantic Versioning 2.0.0](https://semver.org/)
