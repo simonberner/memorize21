@@ -68,4 +68,11 @@ class EmojiThemeViewModel: ObservableObject {
         }
     }
 
+    static var exampleEmojiThemeModel = (
+        EmojiThemeModel(name: "Animals",
+                        emojis: ["🐍", "🐈", "🐇", "🦖", "🪲", "🐬", "🦒", "🦢", "🐿", "🦔", "🐘", "🦧"],
+                        numberOfPairsOfCards: 5,
+                        color: .green)
+    )
+
 }

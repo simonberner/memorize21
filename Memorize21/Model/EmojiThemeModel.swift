@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct EmojiThemeModel: Identifiable {
+struct EmojiThemeModel: Identifiable, Hashable {
     let id = UUID()
     var name: String
     var emojis: [String]

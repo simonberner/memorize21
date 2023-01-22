@@ -8,12 +8,15 @@ import SwiftUI
 class EmojiMemoryGameViewModel: ObservableObject {
     typealias Card = MemoryGameModel<String>.Card
     private var emojiThemeViewModel = EmojiThemeViewModel()
-    private var selectedTheme: String?
+    private var emojiThemeModel: EmojiThemeModel
 
-    init(selectedTheme: String?) {
-//        emojiThemeModel = emojiThemeViewModel.emojiThemeModels.randomElement()! // Assignment2 - Task11
-        self.selectedTheme = selectedTheme
-        emojiThemeModel = emojiThemeViewModel.getEmojiThemeModel(self.selectedTheme)
+    // access control - private(set): other structs/classes can look at the model, but can't change it
+    // Swift detects changes in structs, that is why the model is a struct
+    @Published private var model: MemoryGameModel<String>
+    @Published var showParticleSystemView = false
+
+    init(selectedTheme: EmojiThemeModel) {
+        emojiThemeModel = selectedTheme
         emojiThemeModel.emojis.shuffle() // Assignment2 - Task5
         model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
     }
@@ -25,13 +28,6 @@ class EmojiMemoryGameViewModel: ObservableObject {
             return emojiThemeModel.emojis[pairIndex]
         }
     }
-
-    // access control - private(set): other structs/classes can look at the model, but can't change it
-    // Swift detects changes in structs, that is why the model is a struct
-    @Published private var model: MemoryGameModel<String>
-    @Published var showParticleSystemView = false
-
-    private var emojiThemeModel: EmojiThemeModel
 
     // to make the model fully private and make it available:
     // this is completely read only
@@ -85,7 +81,6 @@ class EmojiMemoryGameViewModel: ObservableObject {
     }
 
     func startNewGame() {
-        emojiThemeModel = emojiThemeViewModel.getEmojiThemeModel(selectedTheme)
         model = EmojiMemoryGameViewModel.createMemoryGame(emojiThemeModel: emojiThemeModel)
     }
 

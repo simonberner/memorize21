@@ -183,11 +183,11 @@ struct EmojiMemoryGameView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    @State static var theme: String?
+struct EmojiMemoryGameView_Previews: PreviewProvider {
+//    private var theme = EmojiThemeViewModel().getEmojiThemeModel("Animals")
 
     static var previews: some View {
-        let gameViewModel = EmojiMemoryGameViewModel(selectedTheme: theme)
+        let gameViewModel = EmojiMemoryGameViewModel(selectedTheme: EmojiThemeViewModel.exampleEmojiThemeModel)
         EmojiMemoryGameView(gameViewModel: gameViewModel)
             .preferredColorScheme(.dark)
         EmojiMemoryGameView(gameViewModel: gameViewModel)
