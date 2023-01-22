@@ -1,4 +1,4 @@
-# Memorize21
+<h1 align=center>Memorize21</h1>
 
 Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and is my very first iOS Development learning project.
 
@@ -48,7 +48,7 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 
 ## Compatibility
 - Current Version 2 of the App runs on iOS/iPadOS 15.2 up to 16.2.
-- Future Version 3 of the App will only run on iOS/iPadOS 16+
+- Future Version 3 of the App will only run on iOS/iPadOS 16.2+
 
 ## Screens
 ![Memorize21](Memorize21/memorize21.png)
@@ -209,3 +209,8 @@ See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
 5. Run lanes with e.g: ```fastlane beta```
 #### Troubleshooting
 - In case that you run out of 'Distribution' certificates, check the Certificates section in your Apple Developer account and delete unused certificates.
+
+<hr>
+<p align="center">
+Made with a 🙂 <a href="https://simonberner.dev">Simon Berner
+</p>
