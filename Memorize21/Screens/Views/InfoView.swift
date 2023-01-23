@@ -56,9 +56,9 @@ struct InfoView: View {
                                 .padding()
                         }
                         Divider()
-                        Text("In 2021, I have started my learning journey in iOS Development. This App here reflects all the things which I have learned so far. I hope you have fun and are enjoying the game. If you face any bugs in using it on your mobile phone, please let me know by writing an email to sibebzh@gmail.com")
+                        Text("In 2021, I have started my learning journey in iOS Development. This App here is my first iOS App I have built. I hope you have fun and are enjoying the game. If you face any bugs in using it on your mobile phone, please let me know by writing an email to sibebzh@gmail.com")
                             .padding()
-                        Text("Made with ❤️")
+                        Text("Made with a 🙂")
                         Spacer()
                     }
                 }
