@@ -8,7 +8,6 @@ struct InfoView: View {
     @Binding var isShowing: Bool
 
     var body: some View {
-        if isShowing {
             ZStack {
                 RoundedRectangle(cornerRadius: ViewConstants.cornerRadius)
                     .foregroundColor(Color.white)
@@ -65,7 +64,6 @@ struct InfoView: View {
                 }
             }
             .foregroundColor(ViewConstants.textColor)
-        }
     }
 }
 
@@ -80,11 +78,9 @@ Rule 3: If you find a match before the animated pie time of 8 seconds per card h
 """
 }
 
-// var isShowing = true
-//
-// struct AboutDialog_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        InfoView()
-//    }
-// }
+struct InfoView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        InfoView(isShowing: .constant(true))
+    }
+}

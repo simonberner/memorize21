@@ -25,8 +25,12 @@ struct EmojiMemoryGameView: View {
                 }
                 .padding(.horizontal)
             }
+            .sheet(isPresented: $showInfoView) {
+                InfoView(isShowing: $showInfoView)
+//                    .presentationDetents([.medium, .large]) // If we don’t ask for any detent, the default is .large.
+//                    .presentationDragIndicator(.hidden)
+            }
             deckBody
-            infoView
             if gameViewModel.showParticleSystemView {
                 ParticleSystemView()
             }
@@ -149,14 +153,14 @@ struct EmojiMemoryGameView: View {
 
     // here we associate a transition with the coming/going of the infoView on screen
     // a transition on its own has no effect, it must be associated with an animation
-    private var infoView: some View {
-        InfoView(isShowing: $showInfoView)
-            // Implicit animations are animations that you specify using the .animation() modifier.
-            // This method is used on bindings (here $showInfoView), and it asks SwiftUI to animate
-            // any changes that result in the binding’s value being modified.
-            .animation(.easeInOut(duration: 1), value: showInfoView)
-            .transition(.asymmetric(insertion: .slide, removal: .slide))
-    }
+//    private var infoView: some View {
+//        InfoView(isShowing: $showInfoView)
+//            // Implicit animations are animations that you specify using the .animation() modifier.
+//            // This method is used on bindings (here $showInfoView), and it asks SwiftUI to animate
+//            // any changes that result in the binding’s value being modified.
+//            .animation(.easeInOut(duration: 1), value: showInfoView)
+//            .transition(.asymmetric(insertion: .slide, removal: .slide))
+//    }
 
     // The @State property wrapper exposes a binding to its underlying value,
     // which we can get to via the $ prefix. For an @State property named swiftCount,
@@ -184,8 +188,6 @@ struct EmojiMemoryGameView: View {
 }
 
 struct EmojiMemoryGameView_Previews: PreviewProvider {
-//    private var theme = EmojiThemeViewModel().getEmojiThemeModel("Animals")
-
     static var previews: some View {
         let gameViewModel = EmojiMemoryGameViewModel(selectedTheme: EmojiThemeViewModel.exampleEmojiThemeModel)
         EmojiMemoryGameView(gameViewModel: gameViewModel)
