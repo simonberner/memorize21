@@ -43,12 +43,12 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 * [Code comments](#code-comments)
 * [App Store](#app-store)
 * [Learning Journey](#learning-journey)
+* [Release Notes](#release-notes)
 
 ---
 
 ## Compatibility
-- Current Version 2 of the App runs on iOS/iPadOS 15.2 up to 16.2.
-- Future Version 3 of the App will only run on iOS/iPadOS 16.2+
+- As of version 3 of the App, only iOS/iPadOS 16.2+ are supported!
 
 ## Screens
 ![Memorize21](Memorize21/memorize21.png)
@@ -209,6 +209,14 @@ See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
 5. Run lanes with e.g: ```fastlane beta```
 #### Troubleshooting
 - In case that you run out of 'Distribution' certificates, check the Certificates section in your Apple Developer account and delete unused certificates.
+
+## Release notes
+### v3.0.0
+- INFO: this version runs only on iOS 16.2+
+- NEW: bottom sheet for the info view
+- NEW: NavigationStack
+- DOC: some updates
+- FIXED: small fixes
 
 <hr>
 <p align="center">
