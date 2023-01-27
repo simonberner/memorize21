@@ -4,10 +4,10 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 
 <p align="center">
     <a href="https://en.wikipedia.org/wiki/IOS">
-        <img src="https://img.shields.io/badge/iOS-15.2+-blue.svg?style=for-the-badge" />
+        <img src="https://img.shields.io/badge/iOS-16.2+-blue.svg?style=for-the-badge" />
     </a>
     <a href="https://en.wikipedia.org/wiki/IPadOS">
-        <img src="https://img.shields.io/badge/iPadOS-15.2+-blue.svg?style=for-the-badge" />
+        <img src="https://img.shields.io/badge/iPadOS-16.2+-blue.svg?style=for-the-badge" />
     </a>
     <a href="https://www.swift.org/">
         <img src="https://img.shields.io/badge/Swift-5.7.2-brightgreen.svg?style=for-the-badge&logo=swift" />
@@ -43,6 +43,7 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 * [Code comments](#code-comments)
 * [App Store](#app-store)
 * [Learning Journey](#learning-journey)
+* [Fastlane](#fastlane)
 * [Release Notes](#release-notes)
 
 ---
@@ -198,7 +199,8 @@ Text("Hello World")
 ### Versioning
 - [Intro to Semantic Versioning](https://www.geeksforgeeks.org/introduction-semantic-versioning/)
 - [Semantic Versioning 2.0.0](https://semver.org/)
-### Fastlane
+
+## Fastlane
 The fastest steps which I took to setup fastlane for this project were the following:
 1. Install fastlane: ```brew install fastlane```
 2. In the project directory: ``fastlane init``` and follow the instructions
@@ -207,7 +209,7 @@ See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
 3. Have a look at my [Ruby file](Memorize21/fastlane/Fasfile)
 4. Create an App specific password in your Apple account: https://appleid.apple.com/account/manage -> Security
 5. Run lanes with e.g: ```fastlane beta```
-#### Troubleshooting
+### Troubleshooting
 - In case that you run out of 'Distribution' certificates, check the Certificates section in your Apple Developer account and delete unused certificates.
 
 ## Release notes
