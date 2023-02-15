@@ -148,7 +148,8 @@ struct EmojiMemoryGameView: View {
                 Text("New Game")
             }
         })
-        .accessibility(label: Text("NewGame"))
+//        .accessibility(label: Text("NewGame"))
+        .accessibilityIdentifier("newgame.button")
     }
 
     // here we associate a transition with the coming/going of the infoView on screen
@@ -175,6 +176,7 @@ struct EmojiMemoryGameView: View {
         }, label: {
             Image(systemName: "info.circle")
         })
+        .accessibilityIdentifier("info.button")
     }
 
     private struct CardConstants {

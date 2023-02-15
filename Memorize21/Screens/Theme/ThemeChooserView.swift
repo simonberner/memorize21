@@ -19,6 +19,7 @@ struct ThemeChooserView: View {
                         Text(getThemeInfo(theme))
                             .foregroundColor(theme.color)
                     }
+                    .accessibilityIdentifier("selection.theme.\(theme.name)")
                 }
                 .navigationDestination(for: EmojiThemeModel.self, destination: { theme in
                     EmojiMemoryGameView(gameViewModel: EmojiMemoryGameViewModel(selectedTheme: theme))
