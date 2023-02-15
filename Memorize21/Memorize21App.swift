@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+// @main
 struct Memorize21App: App {
 //    private let gameViewModel = EmojiMemoryGameViewModel()
     @State private var isShowing = true
