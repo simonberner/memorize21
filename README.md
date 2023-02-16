@@ -39,12 +39,13 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 * [Screens](#screens)
 * [Tech Stack](#tech-stack)
 * [Used Tools](#used-tools)
-* [Architectural Design Patterns](#architectural-design-pattern)
+* [Architecture](#architecture)
 * [Code comments](#code-comments)
 * [App Store](#app-store)
 * [Learning Journey](#learning-journey)
 * [Fastlane](#fastlane)
 * [Release Notes](#release-notes)
+* [Contribution Guidelines](#contribution-guidelines)
 
 ---
 
@@ -63,7 +64,8 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 ## Used Tools
 - [SwiftLint](https://github.com/realm/SwiftLint)
 
-## Architectural Design Pattern
+## Architecture
+### Architectural Design Pattern
 - [MVVM](https://matteomanferdini.com/mvvm-pattern-ios-swift/)
 
 ## Code comments
@@ -219,6 +221,44 @@ See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
 - NEW: NavigationStack
 - DOC: some updates
 - FIXED: small fixes
+
+## Contribution Guidelines
+### Unit-Testing
+Follow the [Arrange, Act and Assert Pattern](https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/) for Unit Testing.
+- Arrange inputs and targets:
+    - Does the test require any objects or special settings?
+    - Does it need to prep a database?
+    - Does it need to log into a web app?
+- Act on target behavior:
+    - This step should call the function/method/API, or whatever needs to be tested.
+    - It should focus on the target behavior.
+- Assert expected outcomes:
+    - This step should elicit some sort of response.
+    - Then the response should be judged for correctness.
+### UI-Testing
+Follow the [Given-When-Then style](https://martinfowler.com/bliki/GivenWhenThen.html) to write the UI-Tests from a user perspective.
+### Code Comments
+- Include "[self documenting code](https://www.youtube.com/watch?v=1NEa-OcsTow)."
+- Additionally, include descriptive comments in order to improve readability.
+    -Aim for comments that allow other programmers to understand your code without having to work through your entire classes/methods.
+### Pull Requests
+- Pull requests should be kept to a reasonable size.
+- Pull requests should be descriptive, answer the following questions:
+    - What was the problem?
+    - What did you do to improve it?
+    - How do you know it is a working solution?/What tests did you do?
+    - Why do you believe this is the right solution?
+    - Why is this the best solution for the problem?
+- Review/proofread your pull request before submission.
+Following this [guide](https://www.youtube.com/watch?v=_sfzAOfY8uc).
+
+## Extra: Xcode shortcuts
+- CMD + B: build the project
+- CMD + R: build and run the App in the simulator
+- CMD + SHIFT + K: clean build folder
+- CMD + SHIFT + O: open quick search
+- CMD + SHIFT + J: highlight the selected open file in the navigator
+- CMD + SHIFT + L: open up the library (Snippets, Media, Colors, SF Symbols)
 
 <hr>
 <p align="center">
