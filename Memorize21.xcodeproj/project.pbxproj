@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150320C429C8C005009BEE63 /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C329C8C005009BEE63 /* TipStore.swift */; };
+		150320C629C8C0C7009BEE63 /* ProductsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C529C8C0C7009BEE63 /* ProductsConstants.swift */; };
 		150EAA1826EA966600BFEA51 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150EAA1726EA966600BFEA51 /* Pie.swift */; };
+		15122CBF29C79A0400A4872E /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15122CBE29C79A0400A4872E /* TipJarView.swift */; };
 		152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */; };
 		152C435327B524A8009A470F /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */; };
 		152C435527B524C1009A470F /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 152C435427B524C1009A470F /* LuckiestGuy-Regular.ttf */; };
@@ -50,7 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150320C329C8C005009BEE63 /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
+		150320C529C8C0C7009BEE63 /* ProductsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsConstants.swift; sourceTree = "<group>"; };
 		150EAA1726EA966600BFEA51 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		15122CBE29C79A0400A4872E /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameExtensions.swift; sourceTree = "<group>"; };
 		152C435227B524A8009A470F /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PermanentMarker-Regular.ttf"; sourceTree = "<group>"; };
 		152C435427B524C1009A470F /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15122CBD29C799E100A4872E /* TipJar */ = {
+			isa = PBXGroup;
+			children = (
+				15122CBE29C79A0400A4872E /* TipJarView.swift */,
+				150320C329C8C005009BEE63 /* TipStore.swift */,
+				150320C529C8C0C7009BEE63 /* ProductsConstants.swift */,
+			);
+			path = TipJar;
+			sourceTree = "<group>";
+		};
 		152C435027B52422009A470F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +206,7 @@
 				159E2DA62761FB0B00AAD829 /* Utilities */,
 				159E2DA52761FA7B00AAD829 /* Extensions */,
 				159E2DA42761FA2E00AAD829 /* Model */,
+				15122CBD29C799E100A4872E /* TipJar */,
 				15DD7BF926BEAFEC0063AB00 /* Memorize21App.swift */,
 				15B20E7C299D02FA009E7AFE /* AppLauncher.swift */,
 				15DD7BFD26BEAFEC0063AB00 /* Assets.xcassets */,
@@ -408,14 +425,17 @@
 				15AB7A5C26CC4DDE00A83FA6 /* EmojiThemeModel.swift in Sources */,
 				15F1366D272073090047FC4C /* ThemeChooserView.swift in Sources */,
 				15B20E7D299D02FA009E7AFE /* AppLauncher.swift in Sources */,
+				150320C429C8C005009BEE63 /* TipStore.swift in Sources */,
 				152C435727B5280D009A470F /* FontNameManager.swift in Sources */,
 				15C8344D272EA1C700AA6718 /* DealtCards.swift in Sources */,
+				150320C629C8C0C7009BEE63 /* ProductsConstants.swift in Sources */,
 				15F2C60D27B064270004D5D3 /* CardView.swift in Sources */,
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
 				156B840E26EE2F9D007E213F /* Cardify.swift in Sources */,
 				158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */,
 				152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */,
 				15B4ADB127AAD22D001508B9 /* ParticleSystemView.swift in Sources */,
+				15122CBF29C79A0400A4872E /* TipJarView.swift in Sources */,
 				15DD7BFC26BEAFEC0063AB00 /* EmojiMemoryGameView.swift in Sources */,
 				159E1B902708AC2B0030D8DC /* InfoView.swift in Sources */,
 				150EAA1826EA966600BFEA51 /* Pie.swift in Sources */,
