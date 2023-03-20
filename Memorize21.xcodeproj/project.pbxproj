@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		150320C429C8C005009BEE63 /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C329C8C005009BEE63 /* TipStore.swift */; };
 		150320C629C8C0C7009BEE63 /* ProductsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C529C8C0C7009BEE63 /* ProductsConstants.swift */; };
+		150320C929C8C720009BEE63 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150320C829C8C720009BEE63 /* StoreKit.framework */; };
 		150EAA1826EA966600BFEA51 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150EAA1726EA966600BFEA51 /* Pie.swift */; };
 		15122CBF29C79A0400A4872E /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15122CBE29C79A0400A4872E /* TipJarView.swift */; };
 		152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		150320C329C8C005009BEE63 /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
 		150320C529C8C0C7009BEE63 /* ProductsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsConstants.swift; sourceTree = "<group>"; };
+		150320C829C8C720009BEE63 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		150EAA1726EA966600BFEA51 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		15122CBE29C79A0400A4872E /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		152AA1572712F9A9001C7A3B /* MemoryGameExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameExtensions.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150320C929C8C720009BEE63 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150320C729C8C720009BEE63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				150320C829C8C720009BEE63 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		15122CBD29C799E100A4872E /* TipJar */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +196,7 @@
 				15DD7C0A26BEAFED0063AB00 /* Memorize21Tests */,
 				15DD7C1526BEAFED0063AB00 /* Memorize21UITests */,
 				15DD7BF726BEAFEC0063AB00 /* Products */,
+				150320C729C8C720009BEE63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
