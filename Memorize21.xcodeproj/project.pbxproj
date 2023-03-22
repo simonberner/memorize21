@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		150320C429C8C005009BEE63 /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C329C8C005009BEE63 /* TipStore.swift */; };
-		150320C629C8C0C7009BEE63 /* ProductsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C529C8C0C7009BEE63 /* ProductsConstants.swift */; };
+		150320C629C8C0C7009BEE63 /* TipProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150320C529C8C0C7009BEE63 /* TipProductIdentifiers.swift */; };
 		150320C929C8C720009BEE63 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150320C829C8C720009BEE63 /* StoreKit.framework */; };
 		150EAA1826EA966600BFEA51 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150EAA1726EA966600BFEA51 /* Pie.swift */; };
 		15122CBF29C79A0400A4872E /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15122CBE29C79A0400A4872E /* TipJarView.swift */; };
@@ -57,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		150320C329C8C005009BEE63 /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
-		150320C529C8C0C7009BEE63 /* ProductsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsConstants.swift; sourceTree = "<group>"; };
+		150320C529C8C0C7009BEE63 /* TipProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipProductIdentifiers.swift; sourceTree = "<group>"; };
 		150320C829C8C720009BEE63 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		150EAA1726EA966600BFEA51 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		15122CBE29C79A0400A4872E /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			children = (
 				15122CBE29C79A0400A4872E /* TipJarView.swift */,
 				150320C329C8C005009BEE63 /* TipStore.swift */,
-				150320C529C8C0C7009BEE63 /* ProductsConstants.swift */,
+				150320C529C8C0C7009BEE63 /* TipProductIdentifiers.swift */,
 				153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */,
 				153EF2BA29CB3C25006CBA9C /* TipJarTestView.swift */,
 			);
@@ -447,7 +447,7 @@
 				150320C429C8C005009BEE63 /* TipStore.swift in Sources */,
 				152C435727B5280D009A470F /* FontNameManager.swift in Sources */,
 				15C8344D272EA1C700AA6718 /* DealtCards.swift in Sources */,
-				150320C629C8C0C7009BEE63 /* ProductsConstants.swift in Sources */,
+				150320C629C8C0C7009BEE63 /* TipProductIdentifiers.swift in Sources */,
 				15F2C60D27B064270004D5D3 /* CardView.swift in Sources */,
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
 				153EF2BB29CB3C25006CBA9C /* TipJarTestView.swift in Sources */,
