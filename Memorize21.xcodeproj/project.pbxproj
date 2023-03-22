@@ -19,6 +19,7 @@
 		1539EBBD26C45D0F000C2BD8 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */; };
 		1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */; };
 		153DD6F9272F178900F7D070 /* EmojiThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */; };
+		153EF2B929CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */; };
 		156B840E26EE2F9D007E213F /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B840D26EE2F9D007E213F /* Cardify.swift */; };
 		158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158410E626E65E7400C860BB /* AspectVGrid.swift */; };
 		159E1B902708AC2B0030D8DC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E1B8F2708AC2B0030D8DC /* InfoView.swift */; };
@@ -66,6 +67,7 @@
 		1539EBBC26C45D0F000C2BD8 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
 		1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiThemeViewModel.swift; sourceTree = "<group>"; };
+		153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TipsStoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		156B840D26EE2F9D007E213F /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		156B8CD826C3042E00E6ECED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		158410E626E65E7400C860BB /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				15122CBE29C79A0400A4872E /* TipJarView.swift */,
 				150320C329C8C005009BEE63 /* TipStore.swift */,
 				150320C529C8C0C7009BEE63 /* ProductsConstants.swift */,
+				153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */,
 			);
 			path = TipJar;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				15DD7C0126BEAFEC0063AB00 /* Preview Assets.xcassets in Resources */,
 				152C435327B524A8009A470F /* PermanentMarker-Regular.ttf in Resources */,
+				153EF2B929CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit in Resources */,
 				15DD7BFE26BEAFEC0063AB00 /* Assets.xcassets in Resources */,
 				152C435527B524C1009A470F /* LuckiestGuy-Regular.ttf in Resources */,
 			);
