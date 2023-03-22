@@ -10,13 +10,58 @@
       "internalID" : "DBE2D2EA",
       "localizations" : [
         {
-          "description" : "",
-          "displayName" : "",
+          "description" : "Throw in a coin 🪙",
+          "displayName" : "Gimme a tiny tip",
           "locale" : "en_US"
         }
       ],
       "productID" : "dev.simonberner.Memorize21.tinyTip",
       "referenceName" : "Tiny Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "E2A1F799",
+      "localizations" : [
+        {
+          "description" : "Throw in 2 coins 🪙 🪙",
+          "displayName" : "Gimme a small tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "dev.simonberner.Memorize21.smallTip",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "7F2FD18E",
+      "localizations" : [
+        {
+          "description" : "Throw in 4 coins 🪙 🪙 🪙 🪙",
+          "displayName" : "Gimme a medium tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "dev.simonberner.Memorize21.mediumTip",
+      "referenceName" : "Medium Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "71A7AC6C",
+      "localizations" : [
+        {
+          "description" : "Throw in a whole money bag💰",
+          "displayName" : "Gimme a large tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "dev.simonberner.Memorize21.largeTip",
+      "referenceName" : "Large Tip",
       "type" : "Consumable"
     }
   ],
