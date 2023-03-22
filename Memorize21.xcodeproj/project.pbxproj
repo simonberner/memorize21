@@ -20,6 +20,7 @@
 		1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */; };
 		153DD6F9272F178900F7D070 /* EmojiThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */; };
 		153EF2B929CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */; };
+		153EF2BB29CB3C25006CBA9C /* TipJarTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EF2BA29CB3C25006CBA9C /* TipJarTestView.swift */; };
 		156B840E26EE2F9D007E213F /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B840D26EE2F9D007E213F /* Cardify.swift */; };
 		158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158410E626E65E7400C860BB /* AspectVGrid.swift */; };
 		159E1B902708AC2B0030D8DC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E1B8F2708AC2B0030D8DC /* InfoView.swift */; };
@@ -68,6 +69,7 @@
 		1539EBBE26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		153DD6F8272F178900F7D070 /* EmojiThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiThemeViewModel.swift; sourceTree = "<group>"; };
 		153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TipsStoreKitConfiguration.storekit; sourceTree = "<group>"; };
+		153EF2BA29CB3C25006CBA9C /* TipJarTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarTestView.swift; sourceTree = "<group>"; };
 		156B840D26EE2F9D007E213F /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		156B8CD826C3042E00E6ECED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		158410E626E65E7400C860BB /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				150320C329C8C005009BEE63 /* TipStore.swift */,
 				150320C529C8C0C7009BEE63 /* ProductsConstants.swift */,
 				153EF2B829CB2A20006CBA9C /* TipsStoreKitConfiguration.storekit */,
+				153EF2BA29CB3C25006CBA9C /* TipJarTestView.swift */,
 			);
 			path = TipJar;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				150320C629C8C0C7009BEE63 /* ProductsConstants.swift in Sources */,
 				15F2C60D27B064270004D5D3 /* CardView.swift in Sources */,
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
+				153EF2BB29CB3C25006CBA9C /* TipJarTestView.swift in Sources */,
 				156B840E26EE2F9D007E213F /* Cardify.swift in Sources */,
 				158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */,
 				152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */,
