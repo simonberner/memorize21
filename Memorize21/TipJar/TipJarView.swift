@@ -28,9 +28,7 @@ struct TipJarView: View {
         .overlay(alignment: .bottom) {
 
             if showThanks {
-
                 VStack(spacing: 8) {
-
                     Text("Thank You 💕")
                         .font(.system(.title2, design: .rounded).bold())
                         .multilineTextAlignment(.center)
@@ -50,24 +48,22 @@ struct TipJarView: View {
                             .frame(maxWidth: .infinity)
                             .background(.blue, in: RoundedRectangle(cornerRadius: 10,
                                                                     style: .continuous))
-
                     }
                 }
                 .padding(16)
-                .background(Color("card-background"), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .background(Color("tip-card-background"), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .padding(.horizontal, 8)
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }
 
         }
         .overlay {
-            
             if showTips {
                 Color.black.opacity(0.8)
                     .ignoresSafeArea()
                     .transition(.opacity)
                     .onTapGesture { showTips.toggle() }
-                cardVw
+                cardView
                     .transition(.move(edge: .bottom).combined(with: .opacity))
             }
         }
@@ -87,48 +83,43 @@ struct TipJarView: View {
 struct TipJarView_Previews: PreviewProvider {
     static var previews: some View {
         TipJarView()
+            .environmentObject(TipsStore())
     }
 }
 
 private extension TipJarView {
 
-    var cardVw: some View {
-
+    var cardView: some View {
         VStack(spacing: 8) {
-
             HStack {
                 Spacer()
                 Button {
                     showTips.toggle()
                 } label: {
-
                     Image(systemName: "xmark")
-                        .symbolVariant(.circle.fill)
-                        .font(.system(.largeTitle, design: .rounded).bold())
-                        .symbolRenderingMode(.palette)
-                        .foregroundStyle(.gray, .gray.opacity(0.2))
+                        .foregroundColor(Color.red)
                 }
             }
 
-            Text("Enjoying the app so far? 👀")
+            Text("Enjoying the app so far?")
                 .font(.system(.title2, design: .rounded).bold())
                 .multilineTextAlignment(.center)
 
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            Text("You can tip me if you like!")
                 .font(.system(.body, design: .rounded))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 16)
 
             ForEach(store.items) { item in
-                configureProductVw(item)
+                configureProductView(item)
             }
 
         }
         .padding(16)
-        .background(Color("card-background"), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .background(Color("tip-card-background"), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .padding(8)
         .overlay(alignment: .top) {
-            Image("logo")
+            Image("tip-logo")
                 .resizable()
                 .frame(width: 50, height: 50)
                 .padding(6)
@@ -137,7 +128,7 @@ private extension TipJarView {
         }
     }
 
-    func configureProductVw(_ item: Product) -> some View {
+    func configureProductView(_ item: Product) -> some View {
         HStack {
             VStack(alignment: .leading,
                    spacing: 3) {
@@ -159,7 +150,7 @@ private extension TipJarView {
             .font(.callout.bold())
         }
         .padding(16)
-        .background(Color("cell-background"),
+        .background(Color("tip-cell-background"),
                     in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
