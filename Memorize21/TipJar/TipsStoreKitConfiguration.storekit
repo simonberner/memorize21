@@ -4,7 +4,21 @@
 
   ],
   "products" : [
-
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "DBE2D2EA",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "dev.simonberner.Memorize21.tinyTip",
+      "referenceName" : "Tiny Tip",
+      "type" : "Consumable"
+    }
   ],
   "settings" : {
 
