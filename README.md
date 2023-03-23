@@ -1,6 +1,6 @@
 <h1 align=center>Memorize21</h1>
 
-Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and is my very first iOS Development learning project.
+Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_game) and is my very first iOS Development project.
 
 <p align="center">
     <a href="https://en.wikipedia.org/wiki/IOS">
@@ -44,8 +44,9 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 * [App Store](#app-store)
 * [Learning Journey](#learning-journey)
 * [Fastlane](#fastlane)
-* [Release Notes](#release-notes)
 * [Contribution Guidelines](#contribution-guidelines)
+* [Credits](#credits)
+* [Release Notes](#release-notes)
 
 ---
 
@@ -60,6 +61,7 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 - [Xcode 14.2](https://developer.apple.com/xcode/)
 - [Swift 5.7.2](https://swift.org/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+- [StoreKit2](https://developer.apple.com/storekit/)
 
 ## Used Tools
 - [SwiftLint](https://github.com/realm/SwiftLint)
@@ -131,7 +133,7 @@ In the new version of the body, the @State var will continue to point the the da
 ### Property Wrapper
 - [What is it?](https://docs.swift.org/swift-book/LanguageGuide/Properties.html#ID617)
 - [SwiftUI property wrappers](https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared)
-## View Modifier
+### View Modifier
 - [Z index](https://www.hackingwithswift.com/quick-start/swiftui/how-to-change-the-order-of-view-layering-using-z-index)
 ### Animation
 - Only changes can be animated. This includes the following three things:
@@ -202,6 +204,9 @@ Text("Hello World")
 - [Intro to Semantic Versioning](https://www.geeksforgeeks.org/introduction-semantic-versioning/)
 - [Semantic Versioning 2.0.0](https://semver.org/)
 
+### In-app purchase
+- A StoreKit configuration file lets us mock and create some fake products
+
 ## Fastlane
 The fastest steps which I took to setup fastlane for this project were the following:
 1. Install fastlane: ```brew install fastlane```
@@ -213,14 +218,6 @@ See also https://docs.fastlane.tools/getting-started/ios/fastlane-swift/)
 5. Run lanes with e.g: ```fastlane beta```
 ### Troubleshooting
 - In case that you run out of 'Distribution' certificates, check the Certificates section in your Apple Developer account and delete unused certificates.
-
-## Release notes
-### v3.0.0
-- INFO: this version runs only on iOS 16.2+
-- NEW: bottom sheet for the info view
-- NEW: NavigationStack
-- DOC: some updates
-- FIXED: small fixes
 
 ## Contribution Guidelines
 ### Unit-Testing
@@ -260,7 +257,25 @@ Following this [guide](https://www.youtube.com/watch?v=_sfzAOfY8uc).
 - CMD + SHIFT + J: highlight the selected open file in the navigator
 - CMD + SHIFT + L: open up the library (Snippets, Media, Colors, SF Symbols)
 
+## Credits
+- [Tunde Adegoroye](https://www.youtube.com/@tundsdev) for the StoreKit2 part
+
+## Release notes
+### v3.0.0
+- INFO: This version runs only on iOS 16.2+
+- NEW: Bottom sheet for the info view
+- NEW: NavigationStack
+- DOC: General updates
+- FIXED: small fixes
+### v3.1.0
+- NEW: You can now put a small coin into my tip jar
+- DOC: General updates
+
 <hr>
 <p align="center">
 Made with a 🙂 <a href="https://simonberner.dev">Simon Berner
+</p>
+
+<p align="center">
+<a href="https://www.buymeacoffee.com/simonberner" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 </p>
