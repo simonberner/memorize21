@@ -11,7 +11,7 @@
       "localizations" : [
         {
           "description" : "Throw in a coin 🪙",
-          "displayName" : "Gimme a tiny tip",
+          "displayName" : "Tiny tip",
           "locale" : "en_US"
         }
       ],
@@ -26,7 +26,7 @@
       "localizations" : [
         {
           "description" : "Throw in 2 coins 🪙 🪙",
-          "displayName" : "Gimme a small tip",
+          "displayName" : "Small tip",
           "locale" : "en_US"
         }
       ],
@@ -41,7 +41,7 @@
       "localizations" : [
         {
           "description" : "Throw in 4 coins 🪙 🪙 🪙 🪙",
-          "displayName" : "Gimme a medium tip",
+          "displayName" : "Medium tip",
           "locale" : "en_US"
         }
       ],
@@ -56,7 +56,7 @@
       "localizations" : [
         {
           "description" : "Throw in a whole money bag💰",
-          "displayName" : "Gimme a large tip",
+          "displayName" : "Large tip",
           "locale" : "en_US"
         }
       ],
