@@ -60,7 +60,13 @@ struct InfoView: View {
                             .padding()
                         Text("Made with a 🙂")
                             .accessibilityIdentifier("made.smile")
-                        Spacer()
+                        Button("💲Tip Me") {
+                            // TODO: action
+                        }
+                        .tint(.pink)
+                        .buttonStyle(.bordered)
+                        .padding(.top)
+
                     }
                 }
             }
