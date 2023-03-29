@@ -6,6 +6,7 @@ struct InfoView: View {
     // tells the view to update itself whenever the value changes
     // it does not store its own value, the state is stored elsewhere
     @Binding var isShowing: Bool
+    @State private var showTipJarView = false
 
     var body: some View {
             ZStack {
@@ -61,7 +62,7 @@ struct InfoView: View {
                         Text("Made with a 🙂")
                             .accessibilityIdentifier("made.smile")
                         Button("💲Tip Me") {
-                            // TODO: action
+                            showTipJarView = true
                         }
                         .tint(.pink)
                         .buttonStyle(.bordered)
@@ -71,6 +72,10 @@ struct InfoView: View {
                 }
             }
             .foregroundColor(ViewConstants.textColor)
+            .sheet(isPresented: $showTipJarView) {
+                TipJarView(showTips: $showTipJarView)
+                    .environmentObject(TipsStore())
+            }
     }
 }
 
