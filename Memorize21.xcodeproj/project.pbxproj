@@ -23,6 +23,7 @@
 		153EF2BB29CB3C25006CBA9C /* TipJarTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EF2BA29CB3C25006CBA9C /* TipJarTestView.swift */; };
 		156B840E26EE2F9D007E213F /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156B840D26EE2F9D007E213F /* Cardify.swift */; };
 		158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158410E626E65E7400C860BB /* AspectVGrid.swift */; };
+		1589CED329D4CDD400F9E198 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589CED229D4CDD400F9E198 /* DismissButton.swift */; };
 		159E1B902708AC2B0030D8DC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E1B8F2708AC2B0030D8DC /* InfoView.swift */; };
 		15AB7A5C26CC4DDE00A83FA6 /* EmojiThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AB7A5B26CC4DDE00A83FA6 /* EmojiThemeModel.swift */; };
 		15B20E7D299D02FA009E7AFE /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B20E7C299D02FA009E7AFE /* AppLauncher.swift */; };
@@ -73,6 +74,7 @@
 		156B840D26EE2F9D007E213F /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		156B8CD826C3042E00E6ECED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		158410E626E65E7400C860BB /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		1589CED229D4CDD400F9E198 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		159E1B8F2708AC2B0030D8DC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		15AB7A5B26CC4DDE00A83FA6 /* EmojiThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiThemeModel.swift; sourceTree = "<group>"; };
 		15AC3548270CE17B00A1F348 /* PrivacyPolicy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PrivacyPolicy.md; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				159E1B8F2708AC2B0030D8DC /* InfoView.swift */,
 				15F2C60C27B064270004D5D3 /* CardView.swift */,
+				1589CED229D4CDD400F9E198 /* DismissButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				1539EBBF26C46152000C2BD8 /* EmojiMemoryGameViewModel.swift in Sources */,
 				153EF2BB29CB3C25006CBA9C /* TipJarTestView.swift in Sources */,
 				156B840E26EE2F9D007E213F /* Cardify.swift in Sources */,
+				1589CED329D4CDD400F9E198 /* DismissButton.swift in Sources */,
 				158410E726E65E7400C860BB /* AspectVGrid.swift in Sources */,
 				152AA1582712F9A9001C7A3B /* MemoryGameExtensions.swift in Sources */,
 				15B4ADB127AAD22D001508B9 /* ParticleSystemView.swift in Sources */,
