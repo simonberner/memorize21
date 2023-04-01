@@ -10,13 +10,13 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
         <img src="https://img.shields.io/badge/iPadOS-16.2+-blue.svg?style=for-the-badge" />
     </a>
     <a href="https://www.swift.org/">
-        <img src="https://img.shields.io/badge/Swift-5.7.2-brightgreen.svg?style=for-the-badge&logo=swift" />
+        <img src="https://img.shields.io/badge/Swift-5.8-brightgreen.svg?style=for-the-badge&logo=swift" />
     </a>
     <a href="https://developer.apple.com/xcode/swiftui">
         <img src="https://img.shields.io/badge/SwiftUI-blue.svg?style=for-the-badge&logo=swift&logoColor=black" />
     </a>
     <a href="https://developer.apple.com/xcode">
-        <img src="https://img.shields.io/badge/Xcode-14.2-blue.svg?style=for-the-badge" />
+        <img src="https://img.shields.io/badge/Xcode-14.3-blue.svg?style=for-the-badge" />
     </a>
     <a href="https://mastodon.green/@simonberner">
         <img src="https://img.shields.io/badge/Contact-@simonberner-orange?style=for-the-badge" alt="mastodon.green/@simonberner" />
@@ -58,8 +58,8 @@ Memorize21 is a classical [Memory Game](https://en.wikipedia.org/wiki/Matching_g
 ![Memorize21](Memorize21/memorize21-go.gif)
 
 ## Tech Stack
-- [Xcode 14.2](https://developer.apple.com/xcode/)
-- [Swift 5.7.2](https://swift.org/)
+- [Xcode 14.3](https://developer.apple.com/xcode/)
+- [Swift 5.8](https://swift.org/)
 - [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 - [StoreKit2](https://developer.apple.com/storekit/)
 
@@ -203,9 +203,9 @@ Text("Hello World")
 ### Versioning
 - [Intro to Semantic Versioning](https://www.geeksforgeeks.org/introduction-semantic-versioning/)
 - [Semantic Versioning 2.0.0](https://semver.org/)
-
 ### In-app purchase
 - A StoreKit configuration file lets us mock and create some fake products
+- Testing: We can simulate a failed transaction via Editor -> Fail Transactions
 
 ## Fastlane
 The fastest steps which I took to setup fastlane for this project were the following:
@@ -258,18 +258,7 @@ Following this [guide](https://www.youtube.com/watch?v=_sfzAOfY8uc).
 - CMD + SHIFT + L: open up the library (Snippets, Media, Colors, SF Symbols)
 
 ## Credits
-- [Tunde Adegoroye](https://www.youtube.com/@tundsdev) for the StoreKit2 part
-
-## Release notes
-### v3.0.0
-- INFO: This version runs only on iOS 16.2+
-- NEW: Bottom sheet for the info view
-- NEW: NavigationStack
-- DOC: General updates
-- FIXED: small fixes
-### v3.1.0
-- NEW: You can now put a small coin into my tip jar
-- DOC: General updates
+- [Tunde Adegoroye](https://www.youtube.com/@tundsdev) for the TipJar (with StoreKit2) part
 
 <hr>
 <p align="center">
