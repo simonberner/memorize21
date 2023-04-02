@@ -7,6 +7,7 @@ struct InfoView: View {
     // it does not store its own value, the state is stored elsewhere
     @Binding var isShowing: Bool
     @State private var showTipJarView = false
+    @State var tipJarSheetDetent: PresentationDetent = .medium
 
     var body: some View {
             ZStack {
@@ -18,16 +19,6 @@ struct InfoView: View {
                             Text("Infos")
                                 .font(.headline)
                                 .padding()
-                            Button(action: {
-                                isShowing = false
-                            }, label: {
-                                Spacer()
-                                HStack {
-                                    Image(systemName: "xmark")
-                                        .foregroundColor(Color.red)
-                                }
-                                .padding()
-                            })
                         }
                         HStack {
                             Text("Memorize Game")
@@ -67,7 +58,10 @@ struct InfoView: View {
                         .tint(.pink)
                         .buttonStyle(.bordered)
                         .padding(.top)
-
+                    }
+                    .overlay(alignment: .topTrailing) {
+                        DismissButton()
+                            .padding(.trailing)
                     }
                 }
             }
@@ -75,6 +69,7 @@ struct InfoView: View {
             .sheet(isPresented: $showTipJarView) {
                 TipJarView(showTips: $showTipJarView)
                     .environmentObject(TipsStore())
+                    .presentationDetents([.medium, .large], selection: $tipJarSheetDetent)
             }
     }
 }
