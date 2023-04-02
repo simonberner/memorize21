@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DismissButton: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
 
     private let buttonIcon = "xmark"
 
