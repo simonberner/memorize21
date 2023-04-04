@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 
+// For readability we create some typealias
 typealias PurchaseResult = Product.PurchaseResult
 typealias TransactionLister = Task<Void, Error>
 
@@ -56,8 +57,9 @@ enum TipsAction: Equatable {
     }
 }
 
+// Holds all the in-app purchase products
 @MainActor
-class TipsStore: ObservableObject {
+final class TipsStore: ObservableObject {
 
     @Published private(set) var items = [Product]()
     @Published private(set) var action: TipsAction? {
@@ -70,6 +72,7 @@ class TipsStore: ObservableObject {
             }
         }
     }
+
     @Published var hasError = false
 
     private var transactionListener: TransactionLister?
@@ -91,6 +94,7 @@ class TipsStore: ObservableObject {
         }
     }
 
+    // Make sure that the listener gets destroyed
     deinit {
         transactionListener?.cancel()
     }
@@ -130,9 +134,9 @@ private extension TipsStore {
     }
 
     /// Get all of the products that are on offer
-    func retrieveProducts() async {
+    private func retrieveProducts() async {
         do {
-            let products = try await Product.products(for: myTipProducts)
+            let products = try await Product.products(for: tipProductIdentifiers)
             items = products.sorted(by: { $0.price < $1.price })
         } catch {
             action = .failed(.system(error))
@@ -141,7 +145,7 @@ private extension TipsStore {
     }
 
     /// Handle the result when purchasing a product
-    func handlePurchase(from result: PurchaseResult) async throws {
+    private func handlePurchase(from result: PurchaseResult) async throws {
         switch result {
         case .success(let verification):
                 print("Purchase was a success, now it's time to verify their purchase")
@@ -163,7 +167,7 @@ private extension TipsStore {
     }
 
     /// Check if the user is verified with their purchase
-    func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         switch result {
         case .unverified:
                 print("The verification of the user failed")
