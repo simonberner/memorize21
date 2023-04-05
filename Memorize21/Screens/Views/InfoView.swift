@@ -7,7 +7,7 @@ struct InfoView: View {
     // it does not store its own value, the state is stored elsewhere
     @Binding var isShowing: Bool
     @State private var showTipJarView = false
-    @State var tipJarSheetDetent: PresentationDetent = .medium
+    @State private var tipJarSheetDetent: PresentationDetent = .medium
 
     var body: some View {
             ZStack {
