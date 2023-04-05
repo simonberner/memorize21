@@ -61,7 +61,7 @@ struct InfoView: View {
                     }
                     .overlay(alignment: .topTrailing) {
                         DismissButton()
-                            .padding(.trailing)
+                            .padding()
                     }
                 }
             }
