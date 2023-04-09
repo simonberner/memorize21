@@ -31,7 +31,6 @@ struct TipJarView: View {
             }
         }
         .padding(16)
-        .background(Color("tip-card-background"), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .onChange(of: store.action, perform: { action in
             if action == .successful {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
