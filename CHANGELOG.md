@@ -1,8 +1,8 @@
 # Changelog
 
-## [3.1.0] - 2023-04-09
+## [3.1.0] - 2023-04-10
 ### New Features
-- In-App purchase: You can now put a small coin into my tip jar (Select a Theme and go to Infos -> Tip Me)
+- In-App purchase: You can now put a coin or more into my tip jar (Select a Theme and go to Infos -> Tip Me)
 ### Documentation
 - General README updates
 - New separate CHANGELOG file
