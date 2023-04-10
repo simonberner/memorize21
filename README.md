@@ -205,7 +205,7 @@ Text("Hello World")
 - [Semantic Versioning 2.0.0](https://semver.org/)
 ### In-app purchase
 - A StoreKit configuration file lets us mock and create some fake products
-- Testing: We can simulate a failed transaction via Editor -> Fail Transactions
+- Testing: We can simulate a failed transaction by selecting the TipStoreKitConfiguration file, then via Editor -> Fail Transactions or Enable Interrupted Purchase
 
 ## Fastlane
 The fastest steps which I took to setup fastlane for this project were the following:
